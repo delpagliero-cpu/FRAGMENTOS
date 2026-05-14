@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fragmentos de una utopía fallida — Delfina Pagliero Garabolla</title>
+<meta name="description" content="Proyecto Final de Grado en Diseño de Indumentaria. Traducción proyectual de recursos simbólicos contraculturales argentinos al diseño contemporáneo. Universidad Empresarial Siglo 21, 2026.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper: #f1ebd8;          /* fondo principal: más claro, tono crema cálido */
+  --paper-2: #e8e0c8;        /* fondo secundario */
+  --ink: #0d0c0a;
+  --ink-soft: #2a2823;
+  --ink-faded: #5a5648;
+  --rule: #1a1814;
+  --stain: #8a1414;
+  --stain-dark: #5e0d0d;
+  --margin: clamp(1.25rem, 4vw, 3rem);
+  --mono: 'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace;
+  --serif: 'Old Standard TT', 'EB Garamond', Georgia, serif;
+}
+
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+html{ scroll-behavior: smooth; }
+
+body{
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Paper grain overlay */
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0.1  0 0 0 0 0.08  0 0 0 0 0.05  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
+}
+
+/* Header bar */
+.doc-header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 0.65rem var(--margin);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--paper);
+  gap: 1rem;
+}
+.doc-header .left, .doc-header .right{ display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: center; }
+.doc-header .stamp{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.doc-header .stamp::before{
+  content: "";
+  width: 8px; height: 8px;
+  background: var(--stain);
+  display: inline-block;
+}
+.doc-header .header-logo{
+  height: 18px;
+  width: auto;
+  display: block;
+  opacity: 0.95;
+}
+.doc-header .nav{ display: flex; gap: 1rem; }
+.doc-header a{ color: var(--paper); text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
+.doc-header a:hover{ opacity: 1; }
+@media (max-width: 720px){
+  .doc-header{ font-size: 9px; padding: 0.5rem 1rem; }
+  .doc-header .nav{ display: none; }
+}
+
+/* ============================================== */
+/* HERO */
+/* ============================================== */
+.hero{
+  min-height: 100vh;
+  padding: 6rem var(--margin) 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.hero-meta{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.8rem 0;
+  margin-bottom: 4rem;
+}
+.hero-meta .field{ display: flex; flex-direction: column; gap: 0.3rem; }
+.hero-meta .field .label{ color: var(--ink-faded); font-size: 9px; }
+.hero-meta .field .value{ color: var(--ink); font-weight: 500; }
+
+.hero-title{
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 8.5vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  max-width: 18ch;
+  margin-bottom: 2rem;
+}
+.hero-title em{
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.hero-title .redact{
+  display: inline-block;
+  position: relative;
+  padding: 0 0.15em;
+}
+.hero-title .redact::after{
+  content: "";
+  position: absolute;
+  inset: 0.15em -0.05em 0.18em -0.05em;
+  background: var(--ink);
+  transform: skewX(-2deg);
+  animation: redact-reveal 2.2s 0.6s forwards cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1;
+}
+.hero-title .redact span{
+  position: relative;
+  z-index: 2;
+  color: var(--paper);
+  animation: text-reveal 0.01s 2.4s forwards;
+}
+@keyframes redact-reveal{
+  0%{ transform-origin: left; transform: scaleX(1) skewX(-2deg); }
+  100%{ transform-origin: left; transform: scaleX(0) skewX(-2deg); }
+}
+@keyframes text-reveal{
+  to{ color: var(--ink); }
+}
+
+.hero-sub{
+  font-family: var(--mono);
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  letter-spacing: 0.05em;
+  max-width: 56ch;
+  color: var(--ink-soft);
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+}
+
+.hero-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.hero-logo-img{
+  max-width: 420px;
+  width: 55vw;
+  height: auto;
+  display: block;
+  filter: invert(1);  /* el logo viene blanco, lo paso a negro para fondo claro */
+}
+.scroll-cue{
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--ink-faded);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.scroll-cue::after{
+  content: "↓";
+  animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(4px); }
+}
+
+.stamp-mark{
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stain);
+  border: 1.5px solid var(--stain);
+  padding: 0.4rem 0.7rem;
+  transform: rotate(-8deg);
+  opacity: 0.85;
+}
+.stamp-mark.top-right{ top: 8rem; right: var(--margin); }
+.stamp-mark.with-date{ display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+.stamp-mark.with-date small{ font-size: 8px; opacity: 0.7; }
+
+@media (max-width: 720px){
+  .stamp-mark.top-right{ top: 6.5rem; right: 1rem; font-size: 9px; padding: 0.3rem 0.5rem; }
+  .hero{ padding-top: 5rem; }
+}
+
+/* ============================================== */
+/* SECTION COMMON */
+/* ============================================== */
+section{ padding: 6rem var(--margin); position: relative; }
+.section-tag{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  margin-bottom: 2.5rem;
+}
+.section-tag::before{
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: var(--ink-faded);
+}
+.section-tag .num{
+  color: var(--stain);
+  font-weight: 700;
+}
+
+.section-h{
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  margin-bottom: 2rem;
+  max-width: 22ch;
+}
+.section-h em{ font-style: italic; color: var(--ink-soft); }
+
+/* ============================================== */
+/* PROLOGO */
+/* ============================================== */
+.prologue{
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.prologue-grid{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+.prologue-aside{
+  position: sticky;
+  top: 4rem;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  border-left: 1px solid var(--rule);
+  padding-left: 1rem;
+}
+.prologue-aside strong{ display: block; color: var(--ink); margin-bottom: 0.5rem; }
+
+.prologue-text{
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 1.9vw, 1.7rem);
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--ink);
+  max-width: 60ch;
+}
+.prologue-text p{ margin-bottom: 1.4rem; }
+.prologue-text p:first-of-type::first-letter{
+  font-family: var(--serif);
+  font-size: 3.5em;
+  line-height: 0.85;
+  float: left;
+  padding: 0.05em 0.1em 0 0;
+  font-style: italic;
+}
+.prologue-text em{ font-style: italic; }
+.prologue-attrib{
+  margin-top: 2.5rem;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+}
+
+@media (max-width: 900px){
+  .prologue-grid{ grid-template-columns: 1fr; gap: 2rem; }
+  .prologue-aside{ position: static; }
+}
+
+/* ============================================== */
+/* PREGUNTA */
+/* ============================================== */
+.problem{
+  background: var(--ink);
+  color: var(--paper);
+}
+.problem .section-tag{ color: rgba(241, 235, 216, 0.5); }
+.problem .section-tag::before{ background: rgba(241, 235, 216, 0.5); }
+.problem .section-tag .num{ color: #d97a5c; }
+
+.problem-question{
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.6rem, 4.2vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  max-width: 28ch;
+  margin-bottom: 4rem;
+}
+.problem-question .accent{
+  color: #d97a5c;
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 0.55em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  vertical-align: super;
+  margin-left: 0.2em;
+}
+
+.subproblems{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  border-top: 1px solid rgba(241, 235, 216, 0.2);
+  padding-top: 2.5rem;
+}
+.subproblem{
+  font-size: 13px;
+  line-height: 1.5;
+}
+.subproblem .num{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #d97a5c;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.subproblem p{ color: rgba(241, 235, 216, 0.85); }
+
+/* ============================================== */
+/* MARCO TEORICO */
+/* ============================================== */
+.framework{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.framework-text{ max-width: 55ch; }
+.framework-text p{
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+  color: var(--ink-soft);
+}
+.framework-text p:first-of-type{
+  font-size: 17px;
+  color: var(--ink);
+  font-weight: 500;
+}
+.framework-text strong{ font-weight: 700; color: var(--ink); }
+
+.framework-keys{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+}
+.framework-keys .key{
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  padding: 0.4rem 0;
+  border-bottom: 1px dotted var(--ink-faded);
+}
+
+/* Inspiration collage — moodboard como pieza protagonista */
+.collage{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 65px;
+  gap: 0.5rem;
+  position: relative;
+}
+.collage > div{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.collage img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.05);
+  display: block;
+}
+/* moodboard como pieza central grande */
+.collage .c1{ grid-column: 1 / 4; grid-row: 1 / 4; }     /* madres — top-left */
+.collage .c2{ grid-column: 4 / 7; grid-row: 1 / 4; }     /* multitud-vidrio — top-right */
+.collage .c3{ grid-column: 1 / 7; grid-row: 4 / 10; }    /* MOODBOARD — pieza grande protagonista */
+.collage .c4{ grid-column: 1 / 4; grid-row: 10 / 13; }   /* nuevos trapos graffiti — bottom-left */
+.collage .c5{ grid-column: 4 / 7; grid-row: 10 / 13; }   /* spinetta — bottom-right */
+
+@media (max-width: 900px){
+  .framework{ grid-template-columns: 1fr; gap: 2rem; }
+  .collage{ grid-auto-rows: 55px; }
+}
+
+/* ============================================== */
+/* CORPUS — ahora con imágenes */
+/* ============================================== */
+.corpus{
+  background: var(--paper-2);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.corpus-intro{
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 65ch;
+  color: var(--ink-soft);
+  margin-bottom: 4rem;
+}
+
+.corpus-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.case-card{
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.case-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 4px 4px 0 var(--rule);
+}
+.case-image{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: var(--paper-2);
+  padding-bottom: 100%;        /* 1:1 — formato universal y robusto en todos los navegadores */
+  height: 0;
+  border-bottom: 1px solid var(--rule);
+}
+.case-image img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.1) contrast(1.05);
+}
+.case-image .corner-num{
+  position: absolute;
+  top: 0; left: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  padding: 0.35rem 0.55rem;
+  font-weight: 700;
+}
+.case-body{
+  padding: 1.2rem 1.3rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+.case-body .discipline{
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  border: 1px solid var(--ink-faded);
+  padding: 0.15rem 0.4rem;
+  align-self: flex-start;
+}
+.case-body .title{
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.1;
+  font-style: italic;
+  margin: 0.4rem 0 0.2rem;
+}
+.case-body .author{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+.case-body .year{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--ink-faded);
+  margin-top: auto;
+  padding-top: 0.8rem;
+  border-top: 1px dotted var(--ink-faded);
+}
+
+/* ============================================== */
+/* NUCLEOS */
+/* ============================================== */
+.nucleos{
+  padding: 8rem var(--margin);
+}
+.nucleos-intro{
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 1.7vw, 1.4rem);
+  font-style: italic;
+  max-width: 50ch;
+  margin: 0 auto 6rem;
+  text-align: center;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.nucleo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 6rem;
+  position: relative;
+}
+.nucleo:nth-child(odd) .nucleo-text{ order: 2; }
+.nucleo:nth-child(odd) .nucleo-visual{ order: 1; }
+
+.nucleo-number{
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--stain);
+  margin-bottom: 1rem;
+  display: block;
+}
+.nucleo-title{
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+.nucleo-text p{
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+  max-width: 50ch;
+}
+.nucleo-text .traduccion{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  display: block;
+}
+.nucleo-text .traduccion strong{ color: var(--ink); }
+
+.nucleo-visual{
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  position: relative;
+}
+.nucleo-visual img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.05) saturate(1.1);
+  display: block;
+}
+.nucleo-visual .marker{
+  position: absolute;
+  bottom: 1rem; left: 1rem;
+  background: rgba(13, 12, 10, 0.85);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.7rem;
+  z-index: 2;
+}
+
+@media (max-width: 900px){
+  .nucleo{ grid-template-columns: 1fr; gap: 1.5rem; }
+  .nucleo:nth-child(odd) .nucleo-text{ order: 2; }
+  .nucleo:nth-child(odd) .nucleo-visual{ order: 1; }
+}
+
+/* ============================================== */
+/* COLECCION */
+/* ============================================== */
+.collection{
+  background: var(--ink);
+  color: var(--paper);
+  padding: 8rem 0 6rem;
+  overflow: hidden;
+}
+.collection .section-tag{ padding: 0 var(--margin); color: rgba(241, 235, 216, 0.6); }
+.collection .section-tag::before{ background: rgba(241, 235, 216, 0.6); }
+.collection .section-tag .num{ color: #ff4d2e; }
+
+.collection-header{
+  padding: 0 var(--margin) 4rem;
+}
+.collection-title{
+  font-family: var(--serif);
+  font-size: clamp(3rem, 14vw, 12rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+}
+.collection-title em{ font-style: italic; }
+.collection-meta{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(241, 235, 216, 0.3);
+  padding-top: 1.5rem;
+  max-width: 1000px;
+}
+.collection-meta .field span{
+  display: block;
+  color: rgba(241, 235, 216, 0.5);
+  font-size: 9px;
+  margin-bottom: 0.3rem;
+}
+
+.collection-quote{
+  padding: 4rem var(--margin) 5rem;
+  max-width: 70ch;
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  line-height: 1.4;
+  font-style: italic;
+  color: rgba(241, 235, 216, 0.9);
+}
+
+/* Galería rediseñada — sin más fondos negros */
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.6rem;
+  padding: 0 var(--margin);
+}
+.gallery figure{
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+.gallery figure img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.gallery figure:hover img{ transform: scale(1.03); }
+.gallery figure figcaption{
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0.7rem 1rem;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery figure:hover figcaption{ opacity: 1; }
+
+/* aspect ratios coherentes con las fotos reales (todas verticales 3:4 / 2:3) */
+.gallery .g1 { grid-column: span 6; aspect-ratio: 3/4; }
+.gallery .g2 { grid-column: span 6; aspect-ratio: 3/4; }
+.gallery .g3 { grid-column: span 4; aspect-ratio: 3/4; }
+.gallery .g4 { grid-column: span 4; aspect-ratio: 3/4; }
+.gallery .g5 { grid-column: span 4; aspect-ratio: 3/4; }
+.gallery .g6 { grid-column: span 6; aspect-ratio: 3/4; }
+.gallery .g7 { grid-column: span 6; aspect-ratio: 3/4; }
+.gallery .g8 { grid-column: span 4; aspect-ratio: 3/4; }
+.gallery .g9 { grid-column: span 4; aspect-ratio: 3/4; }
+.gallery .g10{ grid-column: span 4; aspect-ratio: 3/4; }
+.gallery .g11{ grid-column: span 12; aspect-ratio: 16/9; }
+
+@media (max-width: 900px){
+  .gallery{ grid-template-columns: repeat(2, 1fr); }
+  .gallery > *{ grid-column: span 1 !important; aspect-ratio: 3/4 !important; }
+  .gallery .g11{ grid-column: span 2 !important; aspect-ratio: 16/10 !important; }
+}
+
+/* ============================================== */
+/* IDENTIDAD nuevos trapos */
+/* ============================================== */
+.identity{
+  background: var(--paper);
+  padding: 8rem var(--margin);
+  border-top: 1px solid var(--rule);
+}
+.identity-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.brand-card{
+  background: var(--paper-2);
+  padding: 3rem;
+  position: relative;
+  border: 1px solid var(--rule);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.brand-card::before, .brand-card::after{
+  content: "";
+  position: absolute;
+  background: var(--ink);
+}
+.brand-card::before{
+  top: -1px; left: -1px;
+  width: 30px; height: 1px;
+}
+.brand-card::after{
+  bottom: -1px; right: -1px;
+  width: 30px; height: 1px;
+}
+.brand-logo-img{
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  display: block;
+  filter: invert(1);  /* el logo blanco → negro para fondo claro */
+}
+.brand-tag{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink);
+}
+.brand-tag strong{ display: block; margin-bottom: 0.4rem; }
+
+.identity-text p{
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+  color: var(--ink-soft);
+  max-width: 55ch;
+}
+.identity-text p:first-of-type{
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.identity-system{
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+}
+.identity-system .axis{
+  font-size: 11px;
+  line-height: 1.5;
+}
+.identity-system .axis strong{
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stain);
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 900px){
+  .identity-grid{ grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* ============================================== */
+/* CIERRE — Nota final de la autora */
+/* ============================================== */
+.closing{
+  background: var(--paper);
+  padding: 8rem var(--margin) 6rem;
+  border-top: 1px solid var(--rule);
+}
+.closing-wrap{
+  max-width: 760px;
+  margin: 0 auto;
+}
+.closing .section-tag{ justify-content: flex-start; }
+
+.closing-h{
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+.closing-h em{ font-style: italic; color: var(--ink-soft); }
+
+.closing-text{
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--ink);
+}
+.closing-text p{ margin-bottom: 1.3rem; }
+.closing-text p:first-of-type::first-letter{
+  font-family: var(--serif);
+  font-size: 3.2em;
+  line-height: 0.85;
+  float: left;
+  padding: 0.05em 0.12em 0 0;
+  font-style: italic;
+  color: var(--stain);
+}
+.closing-text em{ font-style: italic; }
+.closing-text strong{ font-weight: 700; color: var(--ink); }
+
+.closing-final{
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 3.5rem 0 0;
+  letter-spacing: -0.01em;
+}
+.closing-final em{ font-style: italic; font-weight: 400; }
+.closing-final .strike{
+  position: relative;
+  display: inline-block;
+}
+.closing-final .strike::after{
+  content: "";
+  position: absolute;
+  left: -1%; right: -1%; top: 52%;
+  height: 0.1em;
+  background: var(--stain);
+  transform: translateY(-50%) rotate(-1deg);
+}
+
+.closing-sign{
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ============================================== */
+/* SOBRE LA AUTORA */
+/* ============================================== */
+.author{
+  background: var(--ink);
+  color: var(--paper);
+  padding: 6rem var(--margin);
+}
+.author-card{
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+  border: 1px solid rgba(241, 235, 216, 0.3);
+  padding: 3rem;
+  position: relative;
+}
+.author-card::before{
+  content: "FICHA — AUTORA / 01";
+  position: absolute;
+  top: -1px; left: 1.5rem;
+  background: var(--ink);
+  padding: 0 0.7rem;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  color: rgba(241, 235, 216, 0.6);
+  transform: translateY(-50%);
+}
+.author-photo{
+  aspect-ratio: 4/5;
+  background: #2a2823;
+  overflow: hidden;
+  position: relative;
+}
+.author-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.05);
+}
+.author-photo .arrow{
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: rgba(13, 12, 10, 0.85);
+  color: var(--paper);
+  padding: 0.4rem 0.7rem;
+  white-space: nowrap;
+}
+.author-text h3{
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.05;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.author-text p{
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(241, 235, 216, 0.85);
+  margin-bottom: 1rem;
+  max-width: 45ch;
+}
+.author-meta{
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.author-meta .item span{
+  display: block;
+  color: rgba(241, 235, 216, 0.5);
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 720px){
+  .author-card{ grid-template-columns: 1fr; padding: 2rem; }
+}
+
+/* ============================================== */
+/* FOOTER */
+/* ============================================== */
+footer{
+  background: var(--ink);
+  color: rgba(241, 235, 216, 0.6);
+  padding: 2rem var(--margin);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-top: 1px solid rgba(241, 235, 216, 0.15);
+}
+footer .footer-logo{
+  height: 28px;
+  width: auto;
+  opacity: 0.7;
+}
+
+/* ============================================== */
+/* SCROLL REVEAL */
+/* ============================================== */
+.reveal{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in{ opacity: 1; transform: translateY(0); }
+
+::selection{ background: var(--ink); color: var(--paper); }
+
+</style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="left">
+    <span class="stamp">EXP — N° 001 / 2026</span>
+    <span>UES21 · CÓRDOBA</span>
+  </div>
+  <div class="right">
+    <nav class="nav">
+      <a href="#prologo">Prólogo</a>
+      <a href="#problema">Pregunta</a>
+      <a href="#nucleos">Núcleos</a>
+      <a href="#coleccion">Colección</a>
+      <a href="#cierre">Nota final</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero">
+  <div>
+    <div class="hero-meta">
+      <div class="field"><span class="label">Documento</span><span class="value">Proyecto Final de Grado</span></div>
+      <div class="field"><span class="label">Modalidad</span><span class="value">Proyecto de Diseño</span></div>
+      <div class="field"><span class="label">Carrera</span><span class="value">Diseño de Indumentaria y Textil</span></div>
+      <div class="field"><span class="label">Año</span><span class="value">2026</span></div>
+    </div>
+
+    <div class="stamp-mark top-right with-date">
+      <span>CONFIDENCIAL</span>
+      <small>Memoria / Archivo</small>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="redact"><span>Fragmentos</span></span>
+      <em>de una</em><br>
+      utopía<br>
+      <span class="redact"><span>fallida</span></span>.
+    </h1>
+    <p class="hero-sub">
+      Traducción proyectual de recursos simbólicos provenientes de la contracultura argentina —dictadura cívico militar y transición democrática— al diseño de indumentaria contemporáneo.
+    </p>
+  </div>
+
+  <div class="hero-bottom">
+    <img src="img/logo-blanco.png" alt="nuevos trapos" class="hero-logo-img">
+    <div>
+      <div>Delfina Pagliero Garabolla</div>
+      <div style="margin-top: 0.3rem; opacity: 0.6;">Tutora · Cubeiro Ana</div>
+    </div>
+    <span class="scroll-cue">desplazar para abrir el expediente</span>
+  </div>
+</section>
+
+<!-- ============================== PROLOGO ============================== -->
+<section id="prologo" class="prologue">
+  <div class="section-tag"><span class="num">00 /</span> Prólogo · cómo empezó esto</div>
+
+  <div class="prologue-grid">
+    <aside class="prologue-aside">
+      <strong>Nota de la autora</strong>
+      Este proyecto no parte de una tendencia ni de una hipótesis estética. Parte de una herida.
+    </aside>
+
+    <div class="prologue-text reveal">
+      <p>Tuve la suerte de que mi proyecto final de grado tuviera como condición reflejar a mi país. Un país hermoso, pero herido. Argentina carga cicatrices que van más allá de las estadísticas y los hechos históricos. Son heridas que laten en la identidad, en la memoria colectiva y en la cultura.</p>
+
+      <p>La dictadura dejó marcas imborrables. Se llevó vidas, sueños, futuros y sembró un vacío insoportable. Cuando llegó la democracia, las esperanzas renacieron. La sociedad creyó que, al fin, todo cambiaría: justicia, igualdad y libertad. Pero esas promesas chocaron de frente contra un país devastado, una economía en ruinas y una justicia que llegó demasiado tarde. La utopía falló, y ese fracaso fue otra herida para un pueblo que ya no podía soportar más dolor.</p>
+
+      <p>En ese contexto, sin embargo, surgió algo extraordinario. Porque cuando el dolor es demasiado, el espíritu humano encuentra maneras de resistir. De esas ruinas surgió una contracultura: el arte se convirtió en un arma para cuestionar y resistir. Todo esto me llevó a preguntarme cómo la indumentaria puede ir mucho más allá, cómo puede convertirse en un vehículo de mensajes, en un canal de símbolos. Porque la moda no es banal ni meramente decorativa. <em>Es política, es lenguaje y es protesta.</em></p>
+
+      <p class="prologue-attrib">— D. P. G. · Córdoba, 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROBLEMA ============================== -->
+<section id="problema" class="problem">
+  <div class="section-tag"><span class="num">01 /</span> Pregunta de diseño</div>
+
+  <h2 class="problem-question reveal">
+    ¿De qué manera una colección de indumentaria contemporánea puede operar como dispositivo semiótico<span class="accent">¹</span>, traduciendo recursos simbólicos provenientes de la contracultura argentina de la última dictadura y la transición democrática?
+  </h2>
+
+  <div class="subproblems">
+    <div class="subproblem">
+      <span class="num">SUB · 01</span>
+      <p>¿Cómo puede comprenderse la indumentaria como dispositivo semiótico?</p>
+    </div>
+    <div class="subproblem">
+      <span class="num">SUB · 02</span>
+      <p>¿Qué condiciones socioculturales del período incidieron en la producción de símbolos dentro de las escenas contraculturales?</p>
+    </div>
+    <div class="subproblem">
+      <span class="num">SUB · 03</span>
+      <p>¿Qué recursos simbólicos aparecen en las producciones artísticas del período analizado?</p>
+    </div>
+    <div class="subproblem">
+      <span class="num">SUB · 04</span>
+      <p>¿Cómo se traducen esos recursos en decisiones de silueta, materialidad, superficie, color y relación con el cuerpo?</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== MARCO TEORICO ============================== -->
+<section id="marco">
+  <div class="section-tag"><span class="num">02 /</span> Universo conceptual</div>
+  <h2 class="section-h reveal">La moda, leída como <em>sistema de significación</em>.</h2>
+
+  <div class="framework">
+    <div class="framework-text reveal">
+      <p>La indumentaria no se piensa acá como ornamento ni como acumulación de tendencias. Se piensa como lenguaje: un sistema de signos capaz de hablar, archivar y disputar el espacio público.</p>
+
+      <p>Para sostener esa lectura, el marco teórico cruza la <strong>semiótica cultural</strong> de Barthes, la <strong>teoría crítica</strong> de Marcuse y las herramientas de análisis simbólico que permiten interpretar cómo un signo —una palabra, una imagen, un gesto, una prenda— condensa una posición frente al poder.</p>
+
+      <p>En paralelo, se construye el suelo histórico: la <strong>última dictadura cívico-militar (1976–1983)</strong> y la <strong>transición democrática</strong>. Censura, desaparición, control del cuerpo y luego, en la apertura, la pregunta por la justicia y la memoria. Sobre ese fondo aparece una contracultura argentina que produce sentido por fuera del discurso oficial: música, performance, literatura, gráfica disidente.</p>
+
+      <p>La pregunta proyectual surge de ahí. Si esas producciones hicieron del arte un arma, ¿qué hace el diseño con eso, hoy? No reproducir su estética, sino <strong>traducir sus operaciones simbólicas</strong> al lenguaje de la prenda.</p>
+
+      <div class="framework-keys">
+        <span class="key">Semiótica</span>
+        <span class="key">Memoria</span>
+        <span class="key">Contracultura</span>
+        <span class="key">Resistencia</span>
+        <span class="key">Censura</span>
+        <span class="key">Traducción</span>
+      </div>
+    </div>
+
+    <div class="collage reveal">
+      <div class="c1"><img src="img/madres.jpg" alt="Madres de Plaza de Mayo con pañuelos bordados" loading="lazy"></div>
+      <div class="c2"><img src="img/multitud-vidrio.jpg" alt="Multitud presionando contra un vidrio" loading="lazy"></div>
+      <div class="c3"><img src="img/moodboard.png" alt="Moodboard del proyecto — represión, color, gráfica disidente, memoria" loading="lazy"></div>
+      <div class="c4"><img src="img/nuevos-trapos-graffiti.jpg" alt="Graffiti 'Nuevos Trapos' sobre muro de calle" loading="lazy"></div>
+      <div class="c5"><img src="img/spinetta.jpg" alt="Músico contracultural en blanco y negro" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CORPUS ============================== -->
+<section id="corpus" class="corpus">
+  <div class="section-tag"><span class="num">03 /</span> El corpus · 8 casos</div>
+  <h2 class="section-h reveal">Ocho obras que cifraron una época.</h2>
+
+  <p class="corpus-intro reveal">
+    El análisis se construye sobre un corpus acotado y deliberado: ocho producciones desarrolladas entre 1970 y 1989, distribuidas equitativamente entre cuatro disciplinas (performance, música, literatura, artes visuales). Todas circularon por circuitos alternativos o marginales, por fuera del discurso hegemónico. Cada una se analiza en sus niveles denotativo, connotativo y contextual.
+  </p>
+
+  <div class="corpus-grid">
+
+    <article class="case-card">
+      <div class="case-image">
+        <img src="img/caso-01-misa.jpg" alt="Patricio Rey y sus Redonditos de Ricota en La Esquina del Sol" loading="lazy">
+        <span class="corner-num">01</span>
+      </div>
+      <div class="case-body">
+        <span class="discipline">Performance</span>
+        <h3 class="title">La Misa Ricotera</h3>
+        <p class="year">1980s · circuito under</p>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-image">
+        <img src="img/caso-02-batato.jpg" alt="Batato Barea, clown travesti, retrato en blanco y negro" loading="lazy">
+        <span class="corner-num">02</span>
+      </div>
+      <div class="case-body">
+        <span class="discipline">Performance</span>
+        <h3 class="title">Batato Barea</h3>
+        <p class="year">1980s</p>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-image">
+        <img src="img/caso-03-alicia.jpg" alt="Tapa del álbum Bicicleta — Serú Girán" loading="lazy">
+        <span class="corner-num">03</span>
+      </div>
+      <div class="case-body">
+        <span class="discipline">Música</span>
+        <h3 class="title">Canción de Alicia en el país</h3>
+        <p class="year">1980 · álbum Bicicleta</p>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-image">
+        <img src="img/caso-04-dinosaurios.jpg" alt="Los Dinosaurios · Charly García, álbum Clics Modernos" loading="lazy">
+        <span class="corner-num">04</span>
+      </div>
+      <div class="case-body">
+        <span class="discipline">Música</span>
+        <h3 class="title">Los Dinosaurios</h3>
+        <p class="year">1983 · álbum Clics Modernos</p>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-image">
+        <img src="img/caso-05-cadaveres.jpg" alt="Cadáveres — Néstor Perlongher, edición Último Reino" loading="lazy">
+        <span class="corner-num">05</span>
+      </div>
+      <div class="case-body">
+        <span class="discipline">Literatura</span>
+        <h3 class="title">Cadáveres</h3>
+        <p class="year">1982</p>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-image">
+        <img src="img/caso-06-cerdos.jpg" alt="Revista Cerdos &amp; Peces — ¿Quién es la ley?" loading="lazy">
+        <span class="corner-num">06</span>
+      </div>
+      <div class="case-body">
+        <span class="discipline">Literatura · Gráfica</span>
+        <h3 class="title">Cerdos &amp; Peces</h3>
+        <p class="year">desde 1984</p>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-image">
+        <img src="img/caso-07-pombo.jpg" alt="Collage gráfico de Marcelo Pombo / GAG" loading="lazy">
+        <span class="corner-num">07</span>
+      </div>
+      <div class="case-body">
+        <span class="discipline">Artes Visuales</span>
+        <h3 class="title">Portada de "Sodoma 2"</h3>
+        <p class="year">posdictadura</p>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-image">
+        <img src="img/caso-08-juicio.jpg" alt="Juicio a las Juntas — registro fotográfico" loading="lazy">
+        <span class="corner-num">08</span>
+      </div>
+      <div class="case-body">
+        <span class="discipline">Artes Visuales · Archivo</span>
+        <h3 class="title">Juicio a las Juntas</h3>
+        <p class="year">1985</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================== NUCLEOS ============================== -->
+<section id="nucleos" class="nucleos">
+  <div class="section-tag"><span class="num">04 /</span> Tres núcleos conceptuales</div>
+
+  <p class="nucleos-intro reveal">
+    Del cruce entre los ocho casos surgen tres operaciones simbólicas. No son temas ni referencias visuales: son los procedimientos culturales que la colección traduce a decisiones de diseño.
+  </p>
+
+  <div class="nucleo reveal">
+    <div class="nucleo-text">
+      <span class="nucleo-number">N · 01</span>
+      <h3 class="nucleo-title">Cuerpo insubordinado.</h3>
+      <p>El cuerpo deja de ser un soporte pasivo y se convierte en una forma activa de aparición social. En la Misa Ricotera, el pogo recupera el contacto y la fricción. En Batato Barea, el cuerpo travestido desestabiliza los modelos normativos de género. En Sodoma 2, el cuerpo erotizado afirma públicamente identidades históricamente perseguidas.</p>
+      <p>El cuerpo aparece, se expande, incomoda y rehúsa ajustarse a una forma disciplinada de presencia.</p>
+      <span class="traduccion"><strong>Traducción proyectual →</strong> Volúmenes expansivos · desajustes deliberados · tensión entre amplitud y adherencia · alternancia entre protección, exposición, rigidez y desborde.</span>
+    </div>
+    <div class="nucleo-visual">
+      <img src="img/DSC09384.jpg" alt="Dos modelos con prendas de la colección en escenario urbano" loading="lazy">
+      <span class="marker">N° 01 · SILUETA</span>
+    </div>
+  </div>
+
+  <div class="nucleo reveal">
+    <div class="nucleo-text">
+      <span class="nucleo-number">N · 02</span>
+      <h3 class="nucleo-title">Saturación como verdad.</h3>
+      <p>Operación visible en producciones que rechazan la limpieza visual, moral o discursiva del orden dominante. En <em>Cadáveres</em>, la repetición insistente hace aparecer aquello que la sociedad intenta negar. En <em>Cerdos &amp; Peces</em>, la estética gráfica agresiva confronta la idea de una democracia ordenada o pulcra. En Batato, lo descartable y kitsch desplazan lo "feo" hacia un lugar de potencia expresiva.</p>
+      <p>La mancha, el exceso, lo precario y la acumulación no son defectos formales: son recursos que hacen visible una realidad atravesada por ocultamientos.</p>
+      <span class="traduccion"><strong>Traducción proyectual →</strong> Huellas · superposiciones · intervenciones visibles · acumulación de información visual · materialidades con cierta crudeza.</span>
+    </div>
+    <div class="nucleo-visual">
+      <img src="img/DSC09230.jpg" alt="Detalle de prenda tejida con corbata, intervenida a mano" loading="lazy">
+      <span class="marker">N° 02 · SUPERFICIE</span>
+    </div>
+  </div>
+
+  <div class="nucleo reveal">
+    <div class="nucleo-text">
+      <span class="nucleo-number">N · 03</span>
+      <h3 class="nucleo-title">Codificación indirecta.</h3>
+      <p>Estrategias para elaborar una lectura crítica sin enunciación directa. En <em>Canción de Alicia en el país</em>, la fantasía infantil habilita una lectura alegórica del terror estatal. En <em>Sodoma 2</em>, el cuerpo aparece fragmentado y parcialmente intervenido. Decir, sin decirlo. Mostrar, sin agotarse.</p>
+      <p>La prenda incorpora una lógica de lectura no inmediata: muestra y reserva, expone y cubre, permite ver pero no de manera total.</p>
+      <span class="traduccion"><strong>Traducción proyectual →</strong> Ambigüedad visual · superposición de capas · contraste entre opacidad y transparencia · ocultamiento y revelación.</span>
+    </div>
+    <div class="nucleo-visual">
+      <img src="img/DSC09166.jpg" alt="Espalda descubierta con remera transparente con tipografía nuevos trapos" loading="lazy">
+      <span class="marker">N° 03 · LECTURA</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== COLECCION ============================== -->
+<section id="coleccion" class="collection">
+  <div class="section-tag"><span class="num">05 /</span> La colección</div>
+
+  <div class="collection-header">
+    <h2 class="collection-title">Frag<em>mentos</em>.</h2>
+    <div class="collection-meta">
+      <div class="field"><span>Conjuntos</span>10</div>
+      <div class="field"><span>Tipologías</span>Sacos · Pantalones · Vestidos · Sweaters · Remeras · Lycras · Trajes</div>
+      <div class="field"><span>Textiles base</span>Microtul · denim · lana · jersey · rib de algodón · lycra de seda</div>
+      <div class="field"><span>Recursos</span>Sublimación · láser · tejido a mano · intervención manual</div>
+      <div class="field"><span>Escala</span>Pieza única → pre-order controlada</div>
+    </div>
+  </div>
+
+  <p class="collection-quote reveal">
+    "La colección resultante no busca reproducir la estética de la época, sino transformar sus operaciones simbólicas en un lenguaje proyectual contemporáneo."
+  </p>
+
+  <div class="gallery">
+    <figure class="g1"><img src="img/DSC09584.jpg" alt="Vestido midi con estampa 'nuevos trapos' repetida" loading="lazy"><figcaption>Frag-09 · Vestido sublimado · Lycra de seda</figcaption></figure>
+    <figure class="g2"><img src="img/DSC09005.jpg" alt="Dos modelos con sacos largos de denim" loading="lazy"><figcaption>Frag-01 / 02 · Tapados largos en denim crudo</figcaption></figure>
+    <figure class="g3"><img src="img/DSC09531.jpg" alt="Vestido red de crochet sobre estampa" loading="lazy"><figcaption>Vestido en tejido manual sobre base sublimada</figcaption></figure>
+    <figure class="g4"><img src="img/DSC09102.jpg" alt="Dos modelos sobre sillón antiguo con mural detrás" loading="lazy"><figcaption>Sweater oversize en denim + remera sublimada</figcaption></figure>
+    <figure class="g5"><img src="img/DSC09166.jpg" alt="Espalda con remera transparente impresa" loading="lazy"><figcaption>Remera con sublimación trasera</figcaption></figure>
+    <figure class="g6"><img src="img/DSC09607.jpg" alt="Dos modelos en puente nocturno" loading="lazy"><figcaption>Tapados + vestidos sublimados · paleta plena</figcaption></figure>
+    <figure class="g7"><img src="img/DSC09625.jpg" alt="Dos modelos con tapados sobre puente" loading="lazy"><figcaption>Producción nocturna · Córdoba</figcaption></figure>
+    <figure class="g8"><img src="img/DSC09304.jpg" alt="Dos modelos en interior con murales" loading="lazy"><figcaption>Sublimado metalizado + sweater oversize</figcaption></figure>
+    <figure class="g9"><img src="img/DSC09424.jpg" alt="Modelo en bar con vestido de crochet" loading="lazy"><figcaption>Vestido de red sobre estampa</figcaption></figure>
+    <figure class="g10"><img src="img/DSC09499.jpg" alt="Dos modelos sentadas riendo con prendas de la colección" loading="lazy"><figcaption>Conjunto pleno · luz cálida</figcaption></figure>
+    <figure class="g11"><img src="img/DSC09487.jpg" alt="Dos modelos en bar con prendas tejidas y estampadas" loading="lazy"><figcaption>Tejido manual + lycra estampada · contexto</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============================== IDENTIDAD ============================== -->
+<section id="identidad" class="identity">
+  <div class="section-tag"><span class="num">06 /</span> Identidad de marca</div>
+  <h2 class="section-h reveal">Si la ropa es el grito,<br>la marca es el archivo<br>que organiza ese grito.</h2>
+
+  <div class="identity-grid">
+    <div class="brand-card reveal">
+      <img src="img/logo-blanco.png" alt="nuevos trapos · logotipo" class="brand-logo-img">
+      <div class="brand-tag">
+        <strong>Diseño Argentino</strong>
+        Indumentaria de autor · Córdoba
+      </div>
+    </div>
+
+    <div class="identity-text reveal">
+      <p>La identidad visual de nuevos trapos es una respuesta ordenadora frente a la complejidad material de la colección. La premisa es establecer un espacio de pulcritud en medio del caos.</p>
+
+      <p>Mientras la propuesta de indumentaria despliega una narrativa visual intensa, cargada de texturas, estampas y contrastes, la marca gráfica funciona como un eje de silencio y claridad que equilibra el conjunto.</p>
+
+      <p>La estrategia gráfica se apropia de la poética de la burocracia para convertirla en una experiencia de nuevo lujo. Tomando como referencia la estética de los archivos censurados, transforma la tachadura y el bloque de tinta negra en sus activos visuales más potentes. Cada etiqueta sellada a mano y cada intervención gráfica funciona como certificado de autenticidad irrepetible.</p>
+
+      <div class="identity-system">
+        <div class="axis"><strong>Tipografía</strong>Nitti Typewriter · una sola familia, todo el sistema.</div>
+        <div class="axis"><strong>Paleta</strong>Negro tinta · blanco crudo lienzo.</div>
+        <div class="axis"><strong>Recurso</strong>Tachadura · sello · espacio negativo.</div>
+        <div class="axis"><strong>Tono</strong>Expediente · documento · archivo vivo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CIERRE — Nota final de la autora ============================== -->
+<section id="cierre" class="closing">
+  <div class="closing-wrap">
+    <div class="section-tag"><span class="num">07 /</span> Nota final · de la autora</div>
+
+    <h2 class="closing-h reveal">Lo que aprendí en el camino.</h2>
+
+    <div class="closing-text reveal">
+      <p>Este proyecto partió de una pregunta concreta: si una colección de indumentaria contemporánea podía operar como dispositivo semiótico para traducir recursos simbólicos de la contracultura argentina de la última dictadura y la transición democrática. Después del recorrido teórico, del análisis del corpus y del desarrollo proyectual, la respuesta no es un sí limpio. Es un sí condicionado, y vale la pena explicar por qué.</p>
+
+      <p>La indumentaria puede traducir, sí, pero <strong>no por imitación</strong>. La hipótesis más obvia —estampar imágenes de archivo, citar la gráfica de los ochenta, recuperar siluetas de época— habría producido una colección ilustrativa, decorativa, indistinguible de cualquier referencia retro. Lo que el trabajo encontró es que la traducción solo funciona cuando se desplaza del nivel de los signos al nivel de los procedimientos. No se trasladó <em>qué</em> decían las obras, se trasladó <em>cómo</em> operaban. Esa distinción, que parece sutil, es lo que separa el homenaje del diseño con espesor.</p>
+
+      <p>Lo segundo que encontré, y que no estaba previsto al inicio, es que <strong>la indumentaria no resiste</strong>. Las obras del corpus resistieron porque actuaban dentro de un régimen que las prohibía; el riesgo era real. Una colección producida en 2026, dentro del circuito del diseño de autor, no enfrenta ese riesgo. Pretender que lo hace sería deshonesto. Lo que la indumentaria sí puede hacer es <em>leer</em>: poner a disposición de un cuerpo contemporáneo un conjunto de procedimientos culturales que de otro modo quedarían fijados al pasado. <em>La prenda no es una trinchera. Es un soporte de lectura.</em></p>
+
+      <p>Dedicar el proyecto "a quienes entregaron su vida por un ideal más grande que ellos mismos" implica asumir una deuda que ninguna colección puede pagar. La ropa no devuelve nadie, no repara nada, no cierra ninguna herida. Reconocer eso no debilita el trabajo: lo ubica en su escala real. Diseñar desde la memoria no es un acto de justicia, es un acto de continuidad. Lo único que la indumentaria puede ofrecer es <em>no agregar olvido</em>.</p>
+
+      <p>Empecé este trabajo escribiendo que en la Argentina el arte se alzó como resistencia cuando el sistema fallaba. Lo termino convencida de que el diseño puede hacer algo más modesto, y por eso mismo posible: sostener la memoria cuando ya no hay régimen al que oponerse, pero todavía hay olvido al que negarse.</p>
+    </div>
+
+    <p class="closing-final reveal">
+      La indumentaria no va a hacer <span class="strike">justicia</span>.<br>
+      Pero puede <em>negarse a callar</em>.
+    </p>
+
+    <div class="closing-sign">
+      <span>— Delfina Pagliero Garabolla · Córdoba, 2026</span>
+      <span>Fin del expediente</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== AUTORA ============================== -->
+<section id="autora" class="author">
+  <div class="author-card">
+    <div class="author-photo">
+      <img src="img/DSC09658.jpg" alt="Delfina Pagliero Garabolla (centro) acompañada por dos modelos de la colección" loading="lazy">
+      <span class="arrow">↑ centro · autora</span>
+    </div>
+    <div class="author-text">
+      <h3>Delfina Pagliero Garabolla.</h3>
+      <p>Soy de Córdoba. Me recibí de diseñadora de indumentaria en la Universidad Empresarial Siglo 21 con este proyecto, trabajado durante un año bajo la tutoría de Ana Cubeiro, que pensó conmigo cada decisión que ves acá.</p>
+      <p>Lo que me importa: la memoria como una forma de no agregar olvido. La moda cuando es lenguaje y no decoración. Los procesos de autor que pueden sostener escala chica sin perder espesor. Eso ahora se llama <em>nuevos trapos</em>. Recién empieza.</p>
+      <div class="author-meta">
+        <div class="item"><span>Universidad</span>UES21</div>
+        <div class="item"><span>Carrera</span>Diseño de Indumentaria y Textil</div>
+        <div class="item"><span>Tutora</span>Cubeiro Ana</div>
+        <div class="item"><span>Sede</span>Córdoba · AR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="img/logo-blanco.png" alt="nuevos trapos" class="footer-logo">
+  <span>© 2026 · Delfina Pagliero Garabolla</span>
+  <span>Proyecto Final de Grado · UES21</span>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
