@@ -1,0 +1,200 @@
+{
+  "anchos": [
+    600,
+    1000,
+    1600
+  ],
+  "ratios": {
+    "130f6a42e3": 0.6667,
+    "e526171bee": 0.6667,
+    "85c3194aed": 0.8,
+    "b208b8a0e5": 0.6667,
+    "b4b2069d7d": 0.6667,
+    "dd3b237206": 0.6667,
+    "e1ad569f91": 0.8,
+    "e1f0a4d61c": 0.8,
+    "55523d8902": 0.6667,
+    "990d6b4356": 0.8,
+    "bcd91fcefd": 0.8,
+    "0a27cb1fba": 0.8,
+    "a74632d679": 0.8,
+    "dd5ada16ac": 0.6667,
+    "9a5bf142ad": 0.6667,
+    "2176d36682": 0.6667,
+    "93d2daf86b": 0.8,
+    "21d3a180dd": 0.6667,
+    "db55e4ef49": 0.8,
+    "375502f5bb": 0.8,
+    "74348dad4c": 0.8,
+    "85197adb82": 0.6667,
+    "0e4d2cc67c": 0.6667,
+    "2cf172d3ef": 0.8,
+    "11b429e282": 0.6667,
+    "417489ca80": 0.8,
+    "26154ad2b6": 0.6667,
+    "fb6531e5ce": 0.6667,
+    "3d54856813": 0.8,
+    "f5bc82af7b": 0.8,
+    "6db14ff21d": 0.8,
+    "4f4a15238e": 0.6667,
+    "1480841a9c": 0.6667,
+    "ac622df44c": 0.6667,
+    "868ecd3767": 0.6667,
+    "d336eb5e4e": 0.6667,
+    "3c6ba489b8": 0.8,
+    "a40253c9a9": 0.8,
+    "c3e7b50432": 0.6667,
+    "551d61b5d2": 0.6667,
+    "0dec76ec42": 0.6667,
+    "ebdb1ad51b": 0.8,
+    "24694cb861": 0.6667,
+    "ccb0107ec6": 0.6667
+  },
+  "prendas": {
+    "FRAG-FA-01": {
+      "carpeta": "FRAG-FA-01 · plaza · falda de denim",
+      "imagenes": [
+        "130f6a42e3",
+        "e526171bee",
+        "85c3194aed",
+        "b208b8a0e5",
+        "b4b2069d7d",
+        "dd3b237206",
+        "e1ad569f91"
+      ]
+    },
+    "FRAG-PA-01": {
+      "carpeta": "FRAG-PA-01 · dinosaurio · pantalón de denim",
+      "imagenes": [
+        "e1f0a4d61c",
+        "55523d8902",
+        "990d6b4356"
+      ]
+    },
+    "FRAG-RE-01": {
+      "carpeta": "FRAG-RE-01 · quién es la ley",
+      "imagenes": [
+        "e1f0a4d61c",
+        "bcd91fcefd",
+        "0a27cb1fba"
+      ]
+    },
+    "FRAG-RE-02": {
+      "carpeta": "FRAG-RE-02 · cerdos",
+      "imagenes": [
+        "a74632d679",
+        "dd5ada16ac"
+      ]
+    },
+    "FRAG-RE-03": {
+      "carpeta": "FRAG-RE-03 · trapos",
+      "imagenes": [
+        "9a5bf142ad",
+        "2176d36682",
+        "93d2daf86b",
+        "21d3a180dd"
+      ]
+    },
+    "FRAG-RE-06": {
+      "carpeta": "FRAG-RE-06 · microtulnuevos trapos",
+      "imagenes": [
+        "db55e4ef49",
+        "375502f5bb",
+        "74348dad4c"
+      ]
+    },
+    "FRAG-RE-07": {
+      "carpeta": "FRAG-RE-07 · charly",
+      "imagenes": []
+    },
+    "FRAG-RE-08": {
+      "carpeta": "FRAG-RE-08 · batato",
+      "imagenes": [
+        "85197adb82",
+        "0e4d2cc67c"
+      ]
+    },
+    "FRAG-RE-09": {
+      "carpeta": "FRAG-RE-09 · bandera",
+      "imagenes": []
+    },
+    "FRAG-RE-10": {
+      "carpeta": "FRAG-RE-10 · rapport",
+      "imagenes": []
+    },
+    "FRAG-SA-01": {
+      "carpeta": "FRAG-SA-01 · ricota · saco de denim",
+      "imagenes": [
+        "2cf172d3ef",
+        "11b429e282",
+        "417489ca80",
+        "26154ad2b6"
+      ]
+    },
+    "FRAG-SA-02": {
+      "carpeta": "FRAG-SA-02 · la multitud · parka de denim",
+      "imagenes": [
+        "fb6531e5ce",
+        "3d54856813",
+        "f5bc82af7b",
+        "6db14ff21d",
+        "4f4a15238e"
+      ]
+    },
+    "FRAG-SA-03": {
+      "carpeta": "FRAG-SA-03 · tejido social · saco largo tejido a mano",
+      "imagenes": [
+        "990d6b4356"
+      ]
+    },
+    "FRAG-SH-01": {
+      "carpeta": "FRAG-SH-01 · 2001",
+      "imagenes": [
+        "a74632d679",
+        "dd5ada16ac"
+      ]
+    },
+    "FRAG-SH-02": {
+      "carpeta": "FRAG-SH-02 · bandera",
+      "imagenes": []
+    },
+    "FRAG-SW-01": {
+      "carpeta": "FRAG-SW-01 · a mano · sweater tejido a mano",
+      "imagenes": [
+        "130f6a42e3",
+        "1480841a9c",
+        "ac622df44c"
+      ]
+    },
+    "FRAG-VE-01": {
+      "carpeta": "FRAG-VE-01 · misa · vestido tejido a mano",
+      "imagenes": [
+        "868ecd3767",
+        "d336eb5e4e",
+        "3c6ba489b8",
+        "a40253c9a9"
+      ]
+    },
+    "FRAG-VE-02": {
+      "carpeta": "FRAG-VE-02 · alicia · vestido de microtul",
+      "imagenes": [
+        "c3e7b50432",
+        "551d61b5d2"
+      ]
+    },
+    "FRAG-VE-03": {
+      "carpeta": "FRAG-VE-03 · rapport · vestido de lycra, manga larga con recortes",
+      "imagenes": [
+        "0dec76ec42",
+        "ebdb1ad51b"
+      ]
+    },
+    "FRAG-VE-04": {
+      "carpeta": "FRAG-VE-04 · vestido rojo",
+      "imagenes": [
+        "24694cb861",
+        "ccb0107ec6"
+      ]
+    }
+  }
+}

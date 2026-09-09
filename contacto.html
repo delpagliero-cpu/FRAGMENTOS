@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>contacto — nuevos trapos</title>
+<meta name="description" content="WhatsApp e Instagram de nuevos trapos. Córdoba, Argentina.">
+<meta property="og:title" content="contacto — nuevos trapos">
+<meta property="og:description" content="WhatsApp e Instagram de nuevos trapos. Córdoba, Argentina.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.nuevostrapos.com.ar/img/editoriales/hero-1600.webp">
+<meta property="og:url" content="https://www.nuevostrapos.com.ar/contacto.html">
+<link rel="canonical" href="https://www.nuevostrapos.com.ar/contacto.html">
+<meta property="og:locale" content="es_AR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/sitio.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/img/wordmark.svg" type="image/svg+xml">
+</head>
+<body>
+
+<a class="saltar" href="#contenido">saltar al contenido</a>
+
+<header class="encabezado doc">
+  <div class="contenedor doc__fila">
+    <div class="doc__izq">
+      <span class="doc__sello"><span class="marca"></span> cba · ar · 26</span>
+      <span>diseño de autor</span>
+    </div>
+    <nav class="doc__der" aria-label="principal">
+      <a href="/">tienda</a>
+      <a href="/sobre.html">sobre la marca</a>
+      <a href="/preguntas.html">preguntas frecuentes</a>
+      <a href="/contacto.html">contacto</a>
+      <a href="#" data-abrir-carrito>carrito <span class="marca" data-carrito-cuenta hidden></span></a>
+    </nav>
+  </div>
+  <div class="aviso" aria-live="off">
+    <span data-aviso>envíos a todo el país</span>
+    <span data-aviso hidden>pagos por Mercado Pago</span>
+  </div>
+</header>
+
+<main id="contenido">
+<div class="contenedor" style="padding-block:var(--e-6)"><p class="kicker">contacto</p><h1 class="t-titulo" style="margin-top:var(--e-2)">contacto</h1><p class="t-cuerpo lectura" style="margin-top:var(--e-2)">Para consultar por un talle, encargar una pieza especial o resolver cualquier problema con un pedido.</p><div class="confianza" style="margin-top:var(--e-5)"><div class="confianza__item"><h2 class="confianza__titulo">WhatsApp</h2><p class="t-cuerpo t-cifra" style="margin-block:var(--e-1)">+54 9 3534 13-6713</p><p class="confianza__texto">Lo más rápido para dudas de talle o encargos.</p><p style="margin-top:var(--e-2)"><a class="boton" href="https://wa.me/5493534136713" target="_blank" rel="noopener">Abrir WhatsApp</a></p></div><div class="confianza__item"><h2 class="confianza__titulo">Instagram</h2><p class="t-cuerpo" style="margin-block:var(--e-1)">@nuevostrapos.archivo</p><p class="confianza__texto">Las prendas puestas, los procesos y lo que va saliendo.</p><p style="margin-top:var(--e-2)"><a class="boton" href="https://www.instagram.com/nuevostrapos.archivo/" target="_blank" rel="noopener">Abrir Instagram</a></p></div></div><div class="datos" style="margin-top:var(--e-5)"><div><p class="rotulo">marca</p><p class="datos__valor">nuevos trapos</p></div><div><p class="rotulo">a cargo</p><p class="datos__valor">Delfina Pagliero</p></div><div><p class="rotulo">dónde</p><p class="datos__valor">córdoba, argentina</p></div><div><p class="rotulo">envíos</p><p class="datos__valor">a todo el país</p></div></div></div>
+</main>
+
+<footer class="contenedor pie">
+  <div class="pie__grilla">
+    <form class="pila-2" data-newsletter novalidate>
+      <label class="etiqueta" for="mail">dejá tu mail y te aviso cuándo sale lo próximo</label>
+      <div class="newsletter">
+        <input class="campo" id="mail" name="mail" type="email" autocomplete="email" required>
+        <button class="boton" type="submit">Enviar</button>
+      </div>
+      <p class="t-nota" data-newsletter-estado role="status"></p>
+    </form>
+    <nav class="pie__links" aria-label="pie">
+      <a href="https://www.instagram.com/nuevostrapos.archivo/" target="_blank" rel="noopener">Instagram</a>
+      <a href="/sobre.html">sobre la marca</a>
+      <a href="/preguntas.html">preguntas frecuentes</a>
+      <a href="/terminos.html">términos y condiciones</a>
+      <a href="/contacto.html">contacto</a>
+    </nav>
+  </div>
+
+  <svg class="pie__wordmark" viewBox="0 0 780 105" fill="currentColor" role="img" aria-label="nuevos trapos">
+    <g font-family="Special Elite, Courier New, monospace" font-size="100">
+      <text x="0" y="80" textLength="240" lengthAdjust="spacing">nuev</text>
+      <circle cx="270" cy="54.2" r="25.8"/>
+      <text x="300" y="80" textLength="480" lengthAdjust="spacing">s trapos</text>
+    </g>
+  </svg>
+
+  <div class="pie__cierre">
+    <span>nuevos trapos · est. 2024</span>
+    <span>@nuevostrapos.archivo</span>
+    <span>Córdoba · Argentina</span>
+  </div>
+</footer>
+
+<script type="module">
+import { aviso, pintarContador, medirEncabezado } from "/js/sitio.js";
+import { conectar as conectarCarrito } from "/js/carrito.js";
+aviso(document.querySelector(".aviso"));
+pintarContador();
+medirEncabezado();
+conectarCarrito();
+document.addEventListener("carrito:cambio", pintarContador);
+document.querySelector("[data-newsletter]").addEventListener("submit", (ev) => {
+  ev.preventDefault();
+  ev.target.querySelector("[data-newsletter-estado]").textContent =
+    "todavía no está conectado.";
+});
+</script>
+
+</body>
+</html>

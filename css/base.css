@@ -1,0 +1,291 @@
+/* nuevos trapos — tokens, reset y tipografía
+   ---------------------------------------------------------------------------
+   Tipografía tomada de nuevostrapos.com.ar: Cutive Mono para todo el texto y
+   Special Elite para rótulos y sellos. Las dos son máquina de escribir y son
+   libres, así que resuelven lo de Nitti Typewriter Open sin licencia.
+
+   Las líneas no son negro puro: van al 16% (--linea). Es la diferencia entre
+   una retícula de archivo y una grilla dura.
+   --------------------------------------------------------------------------- */
+
+:root {
+  /* color ---------------------------------------------------------------- */
+  --papel: #FFFBF8;
+  --papel-2: #F3EDE6;
+
+  --tinta: #000000;
+  --tinta-suave: #14110F;   /* texto corrido */
+  --tinta-media: #3B352F;   /* rótulos chicos — 11.7:1 sobre papel */
+  --tinta-tenue: #7A7066;   /* secundario — 4.7:1, no bajar de 12px */
+
+  --linea: rgba(0, 0, 0, 0.16);
+  --linea-fuerte: rgba(0, 0, 0, 0.42);
+
+  /* Acentos del brief. Uso mínimo, sólo para señalar. */
+  --sangre: #8A1414;
+  --celeste: #7D97A6;
+  --celeste-texto: #4A6675;
+
+  --placeholder: var(--papel-2);
+
+  /* tipografía ----------------------------------------------------------- */
+  /* Tres roles, no uno:
+       --sans  cuerpo, descripciones, botones, formularios. Lo que se lee.
+       --mono  rótulos, precios, metadatos. La textura de archivo.
+       --sello wordmark y kickers. La voz de la marca.
+     Para probar otra sans, cambiar sólo --sans y el <link> de Google Fonts.
+     Archivo es de Omnibus-Type, fundición argentina, y aguanta bien en chico. */
+  --sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Courier Prime", "Courier New", monospace;
+  --sello: "Special Elite", "Courier New", monospace;
+
+  --t-11b: 0.6875rem;
+  --t-10: 0.625rem;
+  --t-11: 0.6875rem;
+  --t-12: 0.75rem;
+  --t-14: 0.875rem;
+  --t-16: 1rem;
+  --t-20: 1.25rem;
+  --t-28: 1.75rem;
+  --t-44: clamp(1.75rem, 1.1rem + 2.8vw, 2.75rem);
+  --t-88: clamp(2.5rem, 1rem + 7vw, 5.5rem);
+
+  /* El tracking abierto de los rótulos es la textura del archivo. */
+  --track-rotulo: 0.14em;
+  --track-kicker: 0.42em;
+
+  /* espacio — escala de 8 */
+  --e-1: 8px;
+  --e-2: 16px;
+  --e-3: 24px;
+  --e-4: 40px;
+  --e-5: 64px;
+  --e-6: 96px;
+  --e-7: 144px;
+  --e-8: 200px;
+
+  /* trazo y medida ------------------------------------------------------- */
+  --borde: 1px solid var(--linea);
+  --borde-fuerte: 1px solid var(--tinta);
+  --ancho-max: 1440px;
+  --ancho-lectura: 60ch;
+  --margen: clamp(1.25rem, 4vw, 3.5rem);
+
+  --transicion: 160ms linear;
+}
+
+/* reset ------------------------------------------------------------------ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Cualquier clase con display propio le gana al [hidden] del navegador. */
+[hidden] {
+  display: none !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  /* El §6 pide scroll suave desde el filtro hasta cada sección. Es lo único
+     con movimiento del sitio, y queda anulado bajo prefers-reduced-motion. */
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--papel);
+  color: var(--tinta-suave);
+  font-family: var(--sans);
+  font-size: var(--t-16);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* tipografía ------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: inherit;
+  line-height: 1.15;
+  text-transform: none;
+}
+
+/* Los títulos van en minúscula, como pide el brief. La mayúscula queda sólo
+   para los rótulos de archivo (.rotulo, .kicker, .sello), que no son títulos
+   ni navegación. */
+
+.t-display {
+  font-size: var(--t-88);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.t-titulo {
+  font-size: var(--t-44);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.t-subtitulo {
+  font-size: var(--t-28);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.t-destacado {
+  font-size: var(--t-20);
+  line-height: 1.5;
+}
+
+.t-cuerpo {
+  font-size: var(--t-16);
+  line-height: 1.6;
+}
+
+.t-chico {
+  font-size: var(--t-14);
+  line-height: 1.55;
+}
+
+.t-nota {
+  font-size: var(--t-12);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* Rótulo de archivo: mayúscula chiquita y muy abierta. Es el gesto que hace
+   que la página se lea como un documento y no como texto suelto. */
+.rotulo {
+  font-family: var(--mono);
+  font-size: var(--t-11);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: var(--track-rotulo);
+  text-transform: uppercase;
+  color: var(--tinta-media);
+}
+
+.rotulo--tenue { color: var(--tinta-tenue); font-size: var(--t-12); }
+
+/* Kicker: rótulo en Special Elite con una raya a cada lado. */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-1);
+  font-family: var(--sello);
+  font-size: var(--t-12);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--tinta-media);
+}
+
+.kicker::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: var(--linea-fuerte);
+}
+
+/* Resaltado en bloque, como un sello sobre la palabra. */
+.mark {
+  background: var(--tinta);
+  color: var(--papel);
+  padding: 0.05em 0.35em;
+}
+
+.t-sello {
+  font-family: var(--sello);
+}
+
+.t-fuerte {
+  font-weight: 700;
+}
+
+/* Cifras de ancho fijo para precios y tabla de medidas. */
+.t-cifra {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--linea-fuerte);
+  transition: background-color var(--transicion), color var(--transicion);
+}
+
+a:hover {
+  background: var(--tinta);
+  color: var(--papel);
+}
+
+/* foco y movimiento ------------------------------------------------------ */
+
+:focus-visible {
+  outline: 2px solid var(--tinta);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* accesibilidad ---------------------------------------------------------- */
+
+.solo-lector {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.saltar {
+  position: absolute;
+  top: var(--e-1);
+  left: var(--e-1);
+  z-index: 200;
+  padding: var(--e-1) var(--e-2);
+  background: var(--papel);
+  border: var(--borde-fuerte);
+  transform: translateY(-300%);
+}
+
+.saltar:focus {
+  transform: none;
+}

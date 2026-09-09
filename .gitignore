@@ -1,0 +1,18 @@
+# Los originales de cámara son 199 MB (2000x3000, ~4 MB cada uno). Quedan en tu
+# disco como masters; al repo sólo van los derivados optimizados de img/prendas,
+# que pesan 16 MB en total. Si se pierden los derivados se regeneran con
+# herramientas/imagenes.py.
+Imagenes de prendas/
+Imagenes editoriales/
+Logos/
+
+# entorno
+.env
+.env.local
+.vercel
+node_modules/
+
+# sistema
+Thumbs.db
+desktop.ini
+.DS_Store

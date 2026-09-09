@@ -1,0 +1,1068 @@
+{
+  "moneda": "ARS",
+  "anchos_imagen": [
+    600,
+    1000,
+    1600
+  ],
+  "ratios_imagen": {
+    "130f6a42e3": 0.6667,
+    "e526171bee": 0.6667,
+    "85c3194aed": 0.8,
+    "b208b8a0e5": 0.6667,
+    "b4b2069d7d": 0.6667,
+    "dd3b237206": 0.6667,
+    "e1ad569f91": 0.8,
+    "e1f0a4d61c": 0.8,
+    "55523d8902": 0.6667,
+    "990d6b4356": 0.8,
+    "bcd91fcefd": 0.8,
+    "0a27cb1fba": 0.8,
+    "a74632d679": 0.8,
+    "dd5ada16ac": 0.6667,
+    "9a5bf142ad": 0.6667,
+    "2176d36682": 0.6667,
+    "93d2daf86b": 0.8,
+    "21d3a180dd": 0.6667,
+    "db55e4ef49": 0.8,
+    "375502f5bb": 0.8,
+    "74348dad4c": 0.8,
+    "85197adb82": 0.6667,
+    "0e4d2cc67c": 0.6667,
+    "2cf172d3ef": 0.8,
+    "11b429e282": 0.6667,
+    "417489ca80": 0.8,
+    "26154ad2b6": 0.6667,
+    "fb6531e5ce": 0.6667,
+    "3d54856813": 0.8,
+    "f5bc82af7b": 0.8,
+    "6db14ff21d": 0.8,
+    "4f4a15238e": 0.6667,
+    "1480841a9c": 0.6667,
+    "ac622df44c": 0.6667,
+    "868ecd3767": 0.6667,
+    "d336eb5e4e": 0.6667,
+    "3c6ba489b8": 0.8,
+    "a40253c9a9": 0.8,
+    "c3e7b50432": 0.6667,
+    "551d61b5d2": 0.6667,
+    "0dec76ec42": 0.6667,
+    "ebdb1ad51b": 0.8,
+    "24694cb861": 0.6667,
+    "ccb0107ec6": 0.6667
+  },
+  "secciones": [
+    "sacos y abrigos",
+    "vestidos",
+    "pantalones y faldas",
+    "remeras",
+    "shorts",
+    "sweaters"
+  ],
+  "destacadas": [
+    "FRAG-VE-01",
+    "FRAG-RE-08",
+    "FRAG-PA-01",
+    "FRAG-SA-01"
+  ],
+  "prendas": [
+    {
+      "codigo": "FRAG-SA-01",
+      "slug": "ricota",
+      "nombre": "ricota",
+      "seccion": "sacos y abrigos",
+      "tipologia": "saco",
+      "materialidad": "denim",
+      "tecnica": null,
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 200000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Saco largo de denim, de calce amplio y hombro caído, pensado para usarse abierto y sobre otras capas. El denim arranca rígido y va cediendo con el uso, así que la prenda se acomoda al cuerpo de quien la lleva. Funciona sobre una remera o cerrado, casi como un vestido.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Denim 100% algodón.",
+        "Lavar del revés en agua fría.",
+        "Secar a la sombra.",
+        "Planchar del revés."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "La Misa Ricotera. La masa que ocupa el espacio se traduce en una silueta que agranda la presencia del cuerpo en vez de contenerla.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "2cf172d3ef",
+        "11b429e282",
+        "417489ca80",
+        "26154ad2b6"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-SA-02",
+      "slug": "la-multitud",
+      "nombre": "la multitud",
+      "seccion": "sacos y abrigos",
+      "tipologia": "parka",
+      "materialidad": "denim",
+      "tecnica": null,
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 150000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Parka de denim con volumen expandido en el cuerpo y en las mangas. La silueta no sigue el entalle: agranda. Admite capas debajo sin ajustar y es la pieza más abrigada de la colección.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Denim 100% algodón.",
+        "Lavar del revés en agua fría.",
+        "Secar a la sombra.",
+        "Planchar del revés."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "La Misa Ricotera. El volumen como presencia compartida, el cuerpo que ocupa más lugar del que le corresponde.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "fb6531e5ce",
+        "3d54856813",
+        "f5bc82af7b",
+        "6db14ff21d",
+        "4f4a15238e"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-SA-03",
+      "slug": "tejido-social",
+      "nombre": "tejido social",
+      "seccion": "sacos y abrigos",
+      "tipologia": "saco largo",
+      "materialidad": "lana",
+      "tecnica": "tejido artesanal",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 75000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Saco largo tejido a mano en lana roja, de punto irregular y superficie viva. Cada pieza se teje entera a mano, así que ninguna sale igual a la otra. Pesa y abriga.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Lana.",
+        "Tejido a mano.",
+        "Lavar a mano en agua fría con jabón neutro.",
+        "No retorcer.",
+        "Secar en plano sobre una toalla."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "La Misa Ricotera. Tejer como acción de unir lo fragmentado: la reconstrucción del tejido social hecha materia, con el rojo como marca de la herida.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "990d6b4356"
+      ],
+      "nota_interna": "revisar este precio, está por debajo del sweater con la misma técnica"
+    },
+    {
+      "codigo": "FRAG-VE-01",
+      "slug": "misa",
+      "nombre": "misa",
+      "seccion": "vestidos",
+      "tipologia": "vestido",
+      "materialidad": "lana",
+      "tecnica": "tejido artesanal",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 350000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "pedido",
+        "l": "pedido"
+      },
+      "descripcion": "Vestido largo tejido a mano en lana roja, de punto abierto. La textura irregular deja pasar la luz y cambia según cómo cae sobre el cuerpo. Se usa solo o sobre una segunda piel.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Lana.",
+        "Tejido a mano.",
+        "Lavar a mano en agua fría con jabón neutro.",
+        "No retorcer.",
+        "Secar en plano."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "La Misa Ricotera. El tejido como reunión: el punto abierto muestra lo que se unió y lo que quedó sin cerrar.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "868ecd3767",
+        "d336eb5e4e",
+        "3c6ba489b8",
+        "a40253c9a9"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-VE-02",
+      "slug": "alicia",
+      "nombre": "alicia",
+      "seccion": "vestidos",
+      "tipologia": "vestido",
+      "materialidad": "microtul",
+      "tecnica": null,
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 75000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "pedido",
+        "l": "pedido"
+      },
+      "descripcion": "Vestido de microtul translúcido, que deja ver de manera parcial lo que hay debajo. La transparencia no expone del todo: muestra y reserva al mismo tiempo. Va sobre otra prenda o sobre el cuerpo, según cuánto quieras mostrar.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Microtul.",
+        "Lavar a mano en agua fría.",
+        "No retorcer.",
+        "No planchar en contacto directo."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "Alicia en el país de las maravillas. La doble lectura: decir algo bajo la apariencia de otra cosa.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "c3e7b50432",
+        "551d61b5d2"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-VE-04",
+      "slug": "vestido-rojo",
+      "nombre": "vestido rojo",
+      "seccion": "vestidos",
+      "tipologia": "vestido",
+      "materialidad": null,
+      "tecnica": null,
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 100000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Vestido corto de punto en hilo rojo con brillo, de textura irregular y transparencias. Manga corta, espalda profunda que cae drapeada y flecos largos en el ruedo que siguen el movimiento. Se usa solo o sobre una segunda piel.",
+      "descripcion_pendiente": "descripción escrita a partir de las fotos, falta que la apruebes",
+      "ficha_tecnica": [],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": null,
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "24694cb861",
+        "ccb0107ec6"
+      ],
+      "nota_interna": "no está en el brief. Falta ficha técnica y origen."
+    },
+    {
+      "codigo": "FRAG-VE-03",
+      "slug": "vestido-rapport",
+      "nombre": "rapport",
+      "seccion": "vestidos",
+      "tipologia": "vestido",
+      "materialidad": "lycra de seda",
+      "tecnica": "sublimación",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 90000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Vestido largo de lycra de seda, manga larga con recortes, estampado con el logo de la marca en rapport sobre toda la superficie. La repetición cubre la prenda entera, sin centro ni jerarquía, y los recortes abren zonas del cuerpo que la estampa no llega a tapar. Se adhiere al cuerpo y acompaña el movimiento.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Lycra de seda.",
+        "Estampado por sublimación digital.",
+        "Manga larga con recortes.",
+        "Lavar del revés a mano en agua fría.",
+        "No usar secarropas.",
+        "Planchar del revés en temperatura baja."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "La repetición como memoria persistente. Lo que insiste no desaparece: vuelve, ocupa superficie y no se deja borrar.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "0dec76ec42",
+        "ebdb1ad51b"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-PA-01",
+      "slug": "dinosaurio",
+      "nombre": "dinosaurio",
+      "seccion": "pantalones y faldas",
+      "tipologia": "pantalón",
+      "materialidad": "denim",
+      "tecnica": null,
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 80000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Se sostiene por la estructura de la tela, sin necesidad de calce ajustado.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Denim 100% algodón.",
+        "Lavar del revés en agua fría.",
+        "Secar a la sombra."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "Los Dinosaurios. La tensión entre peso y fragilidad: el denim aporta estructura, y el calce amplio esquiva el entalle disciplinado.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "e1f0a4d61c",
+        "55523d8902",
+        "990d6b4356"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-FA-01",
+      "slug": "plaza",
+      "nombre": "plaza",
+      "seccion": "pantalones y faldas",
+      "tipologia": "falda",
+      "materialidad": "denim",
+      "tecnica": null,
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 95000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Falda de denim. Se lleva con las piezas adherentes de la colección o sola, con el saco encima.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Denim 100% algodón.",
+        "Lavar del revés en agua fría.",
+        "Secar a la sombra."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "Las imágenes del Juicio a las Juntas en la calle. El espacio público como lugar donde la imagen circula y se vuelve visible.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "130f6a42e3",
+        "e526171bee",
+        "85c3194aed",
+        "b208b8a0e5",
+        "b4b2069d7d",
+        "dd3b237206",
+        "e1ad569f91"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-RE-01",
+      "slug": "quien-es-la-ley",
+      "nombre": "quién es la ley",
+      "seccion": "remeras",
+      "tipologia": "remera",
+      "materialidad": "jersey de algodón",
+      "tecnica": "DTF",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 30000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Remera de jersey de algodón con estampa frontal en DTF. Calce recto, para usar sola o debajo de las piezas de abrigo.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Jersey 100% algodón.",
+        "Estampado DTF.",
+        "Lavar del revés en agua fría.",
+        "No planchar sobre la estampa.",
+        "No usar secarropas."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "El Juicio a las Juntas. La pregunta por la ley se vuelve inscripción sobre el cuerpo: lo que se dijo en la calle vuelve a circular.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "e1f0a4d61c",
+        "bcd91fcefd",
+        "0a27cb1fba"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-RE-02",
+      "slug": "cerdos",
+      "nombre": "cerdos",
+      "seccion": "remeras",
+      "tipologia": "remera",
+      "materialidad": "jersey de algodón",
+      "tecnica": "DTF",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 30000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Remera de jersey de algodón con la tapa de Cerdos & Peces estampada en DTF. La imagen se traslada tal como circulaba: recorte, tipografía y contraste duro. Calce recto, para usar sola o como capa base.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Jersey 100% algodón.",
+        "Estampado DTF.",
+        "Lavar del revés en agua fría.",
+        "No planchar sobre la estampa.",
+        "No usar secarropas."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "Cerdos & Peces. La gráfica de circulación marginal: el impreso que pasaba de mano en mano ahora se lleva puesto.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "a74632d679",
+        "dd5ada16ac"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-RE-03",
+      "slug": "trapos",
+      "nombre": "trapos",
+      "seccion": "remeras",
+      "tipologia": "remera",
+      "materialidad": "jersey de algodón",
+      "tecnica": "DTF",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 30000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "pedido",
+        "l": "pedido"
+      },
+      "descripcion": "Remera de jersey de algodón con el logo de nuevos trapos estampado en DTF. Es la pieza más directa de la colección y la puerta de entrada a la marca. Calce recto, para todos los días.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Jersey 100% algodón.",
+        "Estampado DTF.",
+        "Lavar del revés en agua fría.",
+        "No planchar sobre la estampa.",
+        "No usar secarropas."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "La marca como archivo. El wordmark funciona como el contenedor que ordena la saturación del resto de la colección.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "9a5bf142ad",
+        "2176d36682",
+        "93d2daf86b",
+        "21d3a180dd"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-RE-06",
+      "slug": "pais-de-las-maravillas",
+      "nombre": "país de las maravillas",
+      "seccion": "remeras",
+      "tipologia": "remera",
+      "materialidad": "microtul",
+      "tecnica": "sublimación",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 55000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "pedido",
+        "l": "pedido"
+      },
+      "descripcion": "Remera de microtul, liviana y translúcida, con estampa sublimada. Deja ver parcialmente lo que lleva debajo, así que funciona como capa sobre otra prenda o directamente sobre el cuerpo.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Microtul.",
+        "Estampado por sublimación digital.",
+        "Lavar a mano en agua fría.",
+        "No retorcer.",
+        "No planchar en contacto directo."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "Alicia en el país de las maravillas. El camuflaje: mostrar sin mostrar del todo, exposición controlada.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "db55e4ef49",
+        "375502f5bb",
+        "74348dad4c"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-RE-07",
+      "slug": "charly",
+      "nombre": "charly",
+      "seccion": "remeras",
+      "tipologia": "remera",
+      "materialidad": "lycra de seda",
+      "tecnica": "sublimación",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 35000,
+      "variantes": {
+        "etiqueta": "manga",
+        "opciones": [
+          {
+            "valor": "corta",
+            "precio": 35000
+          },
+          {
+            "valor": "larga",
+            "precio": 45000
+          }
+        ]
+      },
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Remera de lycra de seda con el rostro de Charly sublimado. La imagen queda dentro de la fibra, no encima, así que aguanta el uso sin descascararse. El calce es adherente en las dos versiones.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Lycra de seda.",
+        "Estampado por sublimación digital.",
+        "Lavar del revés a mano en agua fría.",
+        "No usar secarropas.",
+        "Planchar del revés en temperatura baja."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "Los Dinosaurios. La canción que decía bajo censura lo que no se podía decir de frente, ahora puesta sobre el cuerpo.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-RE-08",
+      "slug": "batato",
+      "nombre": "batato",
+      "seccion": "remeras",
+      "tipologia": "remera",
+      "materialidad": "lycra de seda",
+      "tecnica": "sublimación",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 35000,
+      "variantes": {
+        "etiqueta": "manga",
+        "opciones": [
+          {
+            "valor": "corta",
+            "precio": 35000
+          },
+          {
+            "valor": "larga",
+            "precio": 45000
+          }
+        ]
+      },
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Remera de lycra de seda con la figura de Batato sublimada. La estampa se integra a la fibra y acompaña el movimiento del cuerpo.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Lycra de seda.",
+        "Estampado por sublimación digital.",
+        "Lavar del revés a mano en agua fría.",
+        "No usar secarropas.",
+        "Planchar del revés en temperatura baja."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "Batato Barea. La teatralidad y el desborde: el cuerpo disidente que se construye a sí mismo como escena.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "85197adb82",
+        "0e4d2cc67c"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-RE-09",
+      "slug": "remera-bandera",
+      "nombre": "bandera",
+      "seccion": "remeras",
+      "tipologia": "remera",
+      "materialidad": "lycra de seda",
+      "tecnica": "sublimación",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 35000,
+      "variantes": {
+        "etiqueta": "manga",
+        "opciones": [
+          {
+            "valor": "corta",
+            "precio": 35000
+          },
+          {
+            "valor": "larga",
+            "precio": 45000
+          }
+        ]
+      },
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Remera de lycra de seda con estampa pictórica en celeste y rojo. La mancha se extiende por toda la superficie sin repetirse, así que el recorte cae distinto en cada talle.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Lycra de seda.",
+        "Estampado por sublimación digital.",
+        "Lavar del revés a mano en agua fría.",
+        "No usar secarropas.",
+        "Planchar del revés en temperatura baja."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "Paleta de la colección. El celeste opaco como identidad nacional puesta en crisis y el rojo como herida histórica, juntos y sin resolver.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-RE-10",
+      "slug": "remera-rapport",
+      "nombre": "rapport",
+      "seccion": "remeras",
+      "tipologia": "remera",
+      "materialidad": "lycra de seda",
+      "tecnica": "sublimación",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 35000,
+      "variantes": {
+        "etiqueta": "manga",
+        "opciones": [
+          {
+            "valor": "corta",
+            "precio": 35000
+          },
+          {
+            "valor": "larga",
+            "precio": 45000
+          }
+        ]
+      },
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Remera de lycra de seda con el logo de nuevos trapos repetido en rapport sobre toda la superficie. La repetición cubre la prenda entera, sin centro ni jerarquía.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Lycra de seda.",
+        "Estampado por sublimación digital.",
+        "Lavar del revés a mano en agua fría.",
+        "No usar secarropas.",
+        "Planchar del revés en temperatura baja."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "La repetición como memoria persistente. Lo que insiste no desaparece: vuelve, ocupa superficie y no se deja borrar.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-SH-01",
+      "slug": "2001",
+      "nombre": "2001",
+      "seccion": "shorts",
+      "tipologia": "short",
+      "materialidad": "lycra de seda",
+      "tecnica": "sublimación",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 75000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Short de lycra de seda con la estampa de Argentina en llamas, de calce adherente. La imagen queda dentro de la fibra y cubre la pieza entera. Acompaña el cuerpo sin restringirlo y funciona como base debajo de las prendas translúcidas o solo.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Lycra de seda.",
+        "Estampado por sublimación digital.",
+        "Lavar del revés a mano en agua fría.",
+        "No usar secarropas."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "La crisis de 2001. El registro de la calle en llamas como imagen que vuelve.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "a74632d679",
+        "dd5ada16ac"
+      ],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-SH-02",
+      "slug": "short-bandera",
+      "nombre": "bandera",
+      "seccion": "shorts",
+      "tipologia": "short",
+      "materialidad": "lycra de seda",
+      "tecnica": "sublimación",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 75000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Short de lycra de seda con estampa pictórica en celeste y rojo, la misma de la remera bandera. La mancha se extiende sin repetirse, así que el recorte cae distinto en cada talle. Calce adherente.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Lycra de seda.",
+        "Estampado por sublimación digital.",
+        "Lavar del revés a mano en agua fría.",
+        "No usar secarropas."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "Paleta de la colección. El celeste opaco como identidad nacional puesta en crisis y el rojo como herida histórica, juntos y sin resolver.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [],
+      "nota_interna": null
+    },
+    {
+      "codigo": "FRAG-SW-01",
+      "slug": "a-mano",
+      "nombre": "a mano",
+      "seccion": "sweaters",
+      "tipologia": "sweater",
+      "materialidad": "lana",
+      "tecnica": "tejido artesanal",
+      "talles": [
+        "s",
+        "m",
+        "l"
+      ],
+      "estado": "disponible",
+      "plazo": "1 a 2 semanas",
+      "precio": 150000,
+      "variantes": null,
+      "stock": {
+        "s": "pedido",
+        "m": "ya",
+        "l": "pedido"
+      },
+      "descripcion": "Sweater tejido a mano. El punto es denso y la superficie irregular, con las marcas propias del trabajo manual a la vista. Abriga de verdad y sirve como capa media o como pieza principal.",
+      "descripcion_pendiente": null,
+      "ficha_tecnica": [
+        "Lana.",
+        "Tejido a mano.",
+        "Lavar a mano en agua fría con jabón neutro.",
+        "Secar en plano."
+      ],
+      "composicion_pendiente": true,
+      "construccion_pendiente": true,
+      "origen": "La Misa Ricotera. El hacer manual como construcción de comunidad: las irregularidades no se corrigen, quedan.",
+      "medidas": {
+        "columnas": [],
+        "valores": {
+          "s": {},
+          "m": {},
+          "l": {}
+        }
+      },
+      "imagenes": [
+        "130f6a42e3",
+        "1480841a9c",
+        "ac622df44c"
+      ],
+      "nota_interna": null
+    }
+  ]
+}
