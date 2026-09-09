@@ -623,7 +623,7 @@ WORDMARK_SVG = (
 RETORNOS = {
     "aprobado": {
         "titulo": "pago aprobado",
-        "estado": "gracias por llevarte una.",
+        "estado": "gracias por tu compra.",
         "cuerpo": '<p class="t-cuerpo">Esta colección salió de una '
                   "investigación sobre la contracultura argentina de los "
                   "setenta y ochenta. Ahora una de esas piezas es tuya.</p>",
