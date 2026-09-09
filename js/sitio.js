@@ -180,6 +180,38 @@ export function medirEncabezado() {
   else addEventListener("resize", aplicar);
 }
 
+/* En el teléfono el encabezado se lleva demasiado alto de pantalla. Se esconde
+   al bajar y vuelve al subir, que es cuando la persona busca el menú. En
+   escritorio no hace falta: hay lugar de sobra. */
+export function ocultarAlBajar() {
+  const raiz = document.documentElement;
+  let anterior = scrollY;
+  let ultimo = 0;
+
+  const revisar = () => {
+    if (!matchMedia("(max-width: 799px)").matches) {
+      raiz.classList.remove("enc-oculto");
+      anterior = scrollY;
+      return;
+    }
+    const y = scrollY;
+    const bajando = y > anterior;
+    /* Arriba de todo siempre se ve, y no reacciona a movimientos mínimos. */
+    if (y < 140 || Math.abs(y - anterior) < 6) { anterior = y; return; }
+    raiz.classList.toggle("enc-oculto", bajando);
+    anterior = y;
+  };
+
+  /* Con un temporizador y no con requestAnimationFrame: rAF se congela cuando
+     la pestaña no está a la vista y el encabezado quedaba trabado. */
+  addEventListener("scroll", () => {
+    const ahora = Date.now();
+    if (ahora - ultimo < 80) return;
+    ultimo = ahora;
+    revisar();
+  }, { passive: true });
+}
+
 /* Marca en el menú la página en la que estás. Sin esto no hay forma de saber
    dónde estás parado dentro del sitio. */
 export function marcarPagina() {

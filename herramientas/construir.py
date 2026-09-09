@@ -301,12 +301,13 @@ TEMPLATE = """<!DOCTYPE html>
 %(pie)s
 
 <script type="module">
-import { aviso, pintarContador, medirEncabezado, marcarPagina } from "/js/sitio.js";
+import { aviso, pintarContador, medirEncabezado, marcarPagina, ocultarAlBajar } from "/js/sitio.js";
 import { conectar as conectarCarrito, agregar, abrir } from "/js/carrito.js";
 aviso(document.querySelector(".aviso"));
 pintarContador();
 medirEncabezado();
 marcarPagina();
+ocultarAlBajar();
 conectarCarrito();
 document.addEventListener("carrito:cambio", pintarContador);
 document.querySelector("[data-newsletter]").addEventListener("submit", (ev) => {

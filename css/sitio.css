@@ -1097,3 +1097,41 @@
 
 /* El cierre de la ficha respira igual que el resto. */
 .ficha__editorial .editorial { margin-bottom: 0; }
+
+/* encabezado que se esconde al bajar (sólo teléfono) ---------------------- */
+
+@media (max-width: 799px) {
+  /* La tira de la izquierda es decorativa y se comía un renglón entero. */
+  .doc__izq { display: none; }
+
+  .doc__fila { justify-content: center; padding-block: 0.5rem; }
+
+  .encabezado {
+    transition: transform 220ms ease;
+    will-change: transform;
+  }
+
+  .enc-oculto .encabezado { transform: translateY(-100%); }
+
+  /* Con el encabezado escondido, el filtro sube al borde de la pantalla. */
+  .enc-oculto .filtro { top: 0; }
+}
+
+/* el menú del teléfono en un solo renglón --------------------------------- */
+
+@media (max-width: 799px) {
+  /* Con los links envueltos eran tres renglones y 154px de alto: casi un
+     quinto de la pantalla ocupada antes de ver una prenda. */
+  .doc__der {
+    flex-wrap: nowrap;
+    gap: 0.85rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .doc__der::-webkit-scrollbar { display: none; }
+
+  .doc a { white-space: nowrap; min-height: 40px; }
+}

@@ -34,7 +34,7 @@
     <nav class="doc__der" aria-label="principal">
       <a href="/">tienda</a>
       <a href="/sobre.html">sobre la marca</a>
-      <a href="/preguntas.html">preguntas frecuentes</a>
+      <a href="/preguntas.html">preguntas</a>
       <a href="/contacto.html">contacto</a>
       <a href="#" data-abrir-carrito>carrito <span class="marca" data-carrito-cuenta hidden></span></a>
     </nav>
@@ -124,12 +124,13 @@
 </footer>
 
 <script type="module">
-import { aviso, pintarContador, medirEncabezado, marcarPagina } from "/js/sitio.js";
+import { aviso, pintarContador, medirEncabezado, marcarPagina, ocultarAlBajar } from "/js/sitio.js";
 import { conectar as conectarCarrito, agregar, abrir } from "/js/carrito.js";
 aviso(document.querySelector(".aviso"));
 pintarContador();
 medirEncabezado();
 marcarPagina();
+ocultarAlBajar();
 conectarCarrito();
 document.addEventListener("carrito:cambio", pintarContador);
 document.querySelector("[data-newsletter]").addEventListener("submit", (ev) => {
