@@ -623,37 +623,40 @@ WORDMARK_SVG = (
 RETORNOS = {
     "aprobado": {
         "titulo": "pago aprobado",
-        "estado": "listo. tu pedido entró.",
-        "cuerpo": "<p class=\"t-cuerpo\">Te llega un mail de Mercado Pago con el "
-                  "comprobante. Si es una prenda hecha sale en 1 a 5 días; si se "
-                  "produce a pedido llega en una o dos semanas.</p>",
+        "estado": "gracias por llevarte una.",
+        "cuerpo": '<p class="t-cuerpo">Esta colección salió de una '
+                  "investigación sobre la contracultura argentina de los "
+                  "setenta y ochenta. Ahora una de esas piezas es tuya.</p>",
         "acciones": '<a class="boton" href="/">Seguir mirando</a>'
                     '<a class="boton" href="/contacto.html">Escribime</a>',
         "vaciar": True,
+        "imagen": "ed-01",
     },
     "pendiente": {
         "titulo": "pago pendiente",
         "estado": "tu pago está en proceso.",
-        "cuerpo": "<p class=\"t-cuerpo\">Cuando se acredite te confirmo por mail "
+        "cuerpo": '<p class="t-cuerpo">Cuando se acredite te confirmo por mail '
                   "y ahí arranca la producción.</p>"
-                  "<p class=\"t-chico\" style=\"margin-top:16px\">Si elegiste "
-                  "Rapipago o Pago Fácil, todavía falta un paso: Mercado Pago te "
-                  "mandó un cupón por mail y tenés que pagarlo en el local. El "
-                  "pedido queda reservado hasta entonces.</p>",
+                  '<p class="t-chico" style="margin-top:16px">Si elegiste '
+                  "Rapipago o Pago Fácil, todavía falta un paso: Mercado "
+                  "Pago te mandó un cupón por mail y tenés que pagarlo en "
+                  "el local. El pedido queda reservado hasta entonces.</p>",
         "acciones": '<a class="boton" href="/">Seguir mirando</a>'
                     '<a class="boton" href="/contacto.html">Escribime</a>',
         "vaciar": False,
+        "imagen": None,
     },
     "rechazado": {
         "titulo": "pago rechazado",
         "estado": "el pago no se pudo procesar.",
-        "cuerpo": "<p class=\"t-cuerpo\">No se hizo ningún cobro. Podés "
+        "cuerpo": '<p class="t-cuerpo">No se hizo ningún cobro. Podés '
                   "intentarlo de nuevo con otro medio de pago.</p>"
-                  "<p class=\"t-chico\" style=\"margin-top:16px\">También podés "
-                  "pagar por transferencia al alias nuevostrapos.archivo.</p>",
+                  '<p class="t-chico" style="margin-top:16px">También podés '
+                  "pagar por transferencia al alias %s.</p>" % ALIAS,
         "acciones": '<a class="boton boton--invertido" href="/">Volver a intentar</a>'
                     '<a class="boton" href="/contacto.html">Escribime</a>',
         "vaciar": False,
+        "imagen": None,
     },
 }
 
@@ -678,7 +681,12 @@ def pagina_retorno(clave):
         '<p class="rotulo" style="margin-top:24px">número de orden</p>'
         '<p class="retorno__orden" data-orden>—</p>'
         '<div class="retorno__acciones">%s</div>' % r["acciones"]
-        + "</div>" + guion
+        + "</div>"
+        # La compra confirmada cierra con una editorial. En pendiente y en
+        # rechazado no va: ahí lo que hace falta es resolver, no celebrar.
+        + (('<div class="contenedor">%s</div>' % editorial(r["imagen"]))
+           if r.get("imagen") else "")
+        + guion
     )
 
 
