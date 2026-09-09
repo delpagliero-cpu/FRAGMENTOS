@@ -510,10 +510,6 @@ PREGUNTAS = [
      "Entre una y dos semanas desde que se confirma el pago. Las remeras y los "
      "shorts salen más rápido. Los tejidos a mano y el denim llevan el plazo "
      "completo.", False),
-    ("¿Cómo son los talles?",
-     "Trabajo con S, M y L en una línea amplia, pensada para que la prenda no "
-     "dependa de un calce ajustado. En cada ficha están las medidas exactas. Si "
-     "dudás entre dos talles, escribime.", False),
     ("¿Puedo cambiar la prenda?",
      "Como cada pieza se produce a pedido, no hago cambios por arrepentimiento. "
      "Sí resuelvo cualquier problema de confección o falla del producto. "
@@ -523,15 +519,10 @@ PREGUNTAS = [
     ("¿Hacen envíos?",
      "Sí. En la ciudad de Córdoba el envío no tiene costo. Al resto del "
      "país lo coordinamos por WhatsApp antes de despachar.", False),
-    ("¿Puedo retirar en persona?",
-     "Escribime y lo vemos.", False),
     ("¿Cómo cuido las prendas?",
      "Cada prenda viene con sus instrucciones y están también en la ficha. En "
      "general: agua fría, lavado a mano en las piezas tejidas y estampadas, "
      "nada de secarropas. Las estampas nunca se planchan de frente.", False),
-    ("¿Por qué se hace a pedido?",
-     "Para no acumular stock ni desperdiciar tela, y para poder revisar cada "
-     "prenda una por una antes de que salga.", False),
 ]
 
 # Los títulos son la estructura, no el texto. El contenido legal lo escribe

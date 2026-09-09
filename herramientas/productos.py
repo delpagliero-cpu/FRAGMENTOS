@@ -89,24 +89,24 @@ def add(codigo, slug, nombre, seccion, tipologia, materialidad, tecnica, precio,
 add("FRAG-SA-01", "ricota", "ricota", "sacos y abrigos", "saco", "denim", None, 200000,
     "Saco largo de denim, de calce amplio y hombro caído, pensado para usarse abierto y sobre otras capas. El denim arranca rígido y va cediendo con el uso, así que la prenda se acomoda al cuerpo de quien la lleva. Funciona sobre una remera o cerrado, casi como un vestido.",
     DENIM_P,
-    "La Misa Ricotera. La masa que ocupa el espacio se traduce en una silueta que agranda la presencia del cuerpo en vez de contenerla.")
+    "La masa que ocupa el espacio se traduce en una silueta que agranda la presencia del cuerpo en vez de contenerla.")
 
 add("FRAG-SA-02", "la-multitud", "la multitud", "sacos y abrigos", "parka", "denim", None, 150000,
     "Parka de denim con volumen expandido en el cuerpo y en las mangas. La silueta no sigue el entalle: agranda. Admite capas debajo sin ajustar y es la pieza más abrigada de la colección.",
     DENIM_P,
-    "La Misa Ricotera. El volumen como presencia compartida, el cuerpo que ocupa más lugar del que le corresponde.")
+    "El volumen como presencia compartida, el cuerpo que ocupa más lugar del que le corresponde.")
 
 add("FRAG-SA-03", "tejido-social", "tejido social", "sacos y abrigos", "saco largo", "lana", "tejido artesanal", 75000,
     "Saco largo tejido a mano en lana roja, de punto irregular y superficie viva. Cada pieza se teje entera a mano, así que ninguna sale igual a la otra. Pesa y abriga.",
     LANA + ["No retorcer.", "Secar en plano sobre una toalla."],
-    "La Misa Ricotera. Tejer como acción de unir lo fragmentado: la reconstrucción del tejido social hecha materia, con el rojo como marca de la herida.",
+    "Tejer como acción de unir lo fragmentado: la reconstrucción del tejido social hecha materia, con el rojo como marca de la herida.",
     nota="revisar este precio, está por debajo del sweater con la misma técnica")
 
 # vestidos
 add("FRAG-VE-01", "misa", "misa", "vestidos", "vestido", "lana", "tejido artesanal", 350000,
     "Vestido largo tejido a mano en lana roja, de punto abierto. La textura irregular deja pasar la luz y cambia según cómo cae sobre el cuerpo. Se usa solo o sobre una segunda piel.",
     LANA + ["No retorcer.", "Secar en plano."],
-    "La Misa Ricotera. El tejido como reunión: el punto abierto muestra lo que se unió y lo que quedó sin cerrar.")
+    "El tejido como reunión: el punto abierto muestra lo que se unió y lo que quedó sin cerrar.")
 
 add("FRAG-VE-02", "alicia", "alicia", "vestidos", "vestido", "microtul", None, 75000,
     "Vestido de microtul translúcido, que deja ver de manera parcial lo que hay debajo. La transparencia no expone del todo: muestra y reserva al mismo tiempo. Va sobre otra prenda o sobre el cuerpo, según cuánto quieras mostrar.",
@@ -193,7 +193,7 @@ add("FRAG-SH-02", "short-bandera", "bandera", "shorts", "short", "lycra de seda"
 add("FRAG-SW-01", "a-mano", "a mano", "sweaters", "sweater", "lana", "tejido artesanal", 150000,
     "Sweater tejido a mano. El punto es denso y la superficie irregular, con las marcas propias del trabajo manual a la vista. Abriga de verdad y sirve como capa media o como pieza principal.",
     LANA + ["Secar en plano."],
-    "La Misa Ricotera. El hacer manual como construcción de comunidad: las irregularidades no se corrigen, quedan.")
+    "El hacer manual como construcción de comunidad: las irregularidades no se corrigen, quedan.")
 
 add("FRAG-TEST", "prueba", "prueba de pago", "remeras", "prueba", None, None, 100,
     "Producto de prueba para verificar el circuito de pago. No es una prenda "
