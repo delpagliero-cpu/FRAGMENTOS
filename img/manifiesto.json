@@ -26,6 +26,7 @@
     "db55e4ef49": 0.8,
     "375502f5bb": 0.8,
     "74348dad4c": 0.8,
+    "96ed965a6b": 0.8047,
     "85197adb82": 0.6667,
     "0e4d2cc67c": 0.6667,
     "2cf172d3ef": 0.8,
@@ -38,6 +39,8 @@
     "f5bc82af7b": 0.8,
     "6db14ff21d": 0.8,
     "4f4a15238e": 0.6667,
+    "0a9a26c80c": 0.7498,
+    "87e9dc3327": 0.7498,
     "1480841a9c": 0.6667,
     "ac622df44c": 0.6667,
     "868ecd3767": 0.6667,
@@ -106,7 +109,9 @@
     },
     "FRAG-RE-07": {
       "carpeta": "FRAG-RE-07 · charly",
-      "imagenes": []
+      "imagenes": [
+        "96ed965a6b"
+      ]
     },
     "FRAG-RE-08": {
       "carpeta": "FRAG-RE-08 · batato",
@@ -161,7 +166,10 @@
     },
     "FRAG-SH-02": {
       "carpeta": "FRAG-SH-02 · bandera",
-      "imagenes": []
+      "imagenes": [
+        "0a9a26c80c",
+        "87e9dc3327"
+      ]
     },
     "FRAG-SW-01": {
       "carpeta": "FRAG-SW-01 · a mano · sweater tejido a mano",

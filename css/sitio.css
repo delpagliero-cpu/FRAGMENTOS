@@ -989,3 +989,51 @@
 .prenda__enlace[data-tipo="falda"] { --zoom: 1.4; --foco: 50% 55%; }
 
 /* Los sacos, las parkas y los vestidos se ven mejor enteros: no se acercan. */
+
+/* letra chica de la compra ------------------------------------------------ */
+
+/* Antes era un párrafo en mayúscula que decía "Mercado Pago" tres veces y se
+   leía como un bloque compacto. Ahora es una lista rotulada: el rótulo dice
+   de qué se habla y el dato va al lado, en minúscula, que es lo que se lee. */
+.letrachica {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--e-1) var(--e-2);
+  align-items: baseline;
+  margin-top: var(--e-3);
+  padding-top: var(--e-2);
+  border-top: var(--borde);
+}
+
+.letrachica dt {
+  font-family: var(--mono);
+  font-size: var(--t-11);
+  font-weight: 700;
+  letter-spacing: var(--track-rotulo);
+  text-transform: uppercase;
+  color: var(--tinta-media);
+}
+
+.letrachica dd {
+  font-size: var(--t-12);
+  line-height: 1.55;
+  color: var(--tinta-media);
+}
+
+.letrachica__sellos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.letrachica__sellos span {
+  border: var(--borde);
+  padding: 1px 6px;
+  font-family: var(--mono);
+  font-size: var(--t-11);
+}
+
+@media (max-width: 420px) {
+  .letrachica { grid-template-columns: 1fr; gap: 2px var(--e-2); }
+  .letrachica dd { margin-bottom: var(--e-1); }
+}
