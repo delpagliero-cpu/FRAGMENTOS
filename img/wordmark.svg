@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 105" role="img" aria-labelledby="wordmark-titulo" fill="currentColor">
+  <title id="wordmark-titulo">nuevos trapos</title>
+  <!-- PROVISORIO. Construido con IBM Plex Mono + el círculo lleno en lugar de
+       la "o" de "nuevos". Cuando esté el logo real, se reemplaza este archivo
+       entero y no hay que tocar nada más: el resto del sitio lo referencia
+       siempre desde acá.
+       Grilla monoespaciada: 13 caracteres de 60 unidades, baseline en y=80.
+       textLength fija el ancho de cada tramo, así el círculo cae en su lugar
+       aunque la fuente no llegue a cargar. -->
+  <g font-family="IBM Plex Mono, ui-monospace, Courier New, monospace" font-size="100" font-weight="400">
+    <text x="0" y="80" textLength="240" lengthAdjust="spacing">nuev</text>
+    <circle cx="270" cy="54.2" r="25.8"/>
+    <text x="300" y="80" textLength="480" lengthAdjust="spacing">s trapos</text>
+  </g>
+</svg>

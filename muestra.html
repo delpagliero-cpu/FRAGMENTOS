@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>probar tipografías — nuevos trapos</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Poppins:wght@400;500;600&family=Josefin+Sans:wght@400;500;600&family=Work+Sans:wght@400;500;600&family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/sitio.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<style>
+  .cab { padding-block: var(--e-4); border-bottom: var(--borde); }
+  .opts { display: flex; flex-wrap: wrap; gap: var(--e-1); margin-top: var(--e-3); }
+  .comparar { display: grid; gap: var(--e-5); margin-block: var(--e-5); }
+  @media (min-width: 900px) { .comparar { grid-template-columns: repeat(2, 1fr); } }
+  .caso { border: var(--borde); padding: var(--e-3); }
+  .caso__nombre {
+    font-family: var(--mono); font-size: var(--t-11); font-weight: 700;
+    letter-spacing: var(--track-rotulo); text-transform: uppercase;
+    padding-bottom: var(--e-1); border-bottom: var(--borde); margin-bottom: var(--e-3);
+  }
+</style>
+</head>
+<body>
+
+<div class="contenedor cab">
+  <p class="kicker">prueba</p>
+  <h1 class="t-titulo" style="margin-top:var(--e-2)">¿qué tipografía para el cuerpo?</h1>
+  <p class="t-cuerpo" style="max-width:60ch;margin-top:var(--e-2)">
+    Los rótulos, los precios y el wordmark se quedan en máquina de escribir en
+    todos los casos. Lo único que cambia es el texto que se lee. Tocá una
+    opción y mirá los cuatro bloques de abajo.
+  </p>
+  <div class="opts" role="group" aria-label="tipografía del cuerpo">
+    <button class="boton" type="button" data-fuente="Archivo">Archivo</button>
+    <button class="boton" type="button" data-fuente="Poppins">Poppins</button>
+    <button class="boton" type="button" data-fuente="Josefin Sans">Josefin Sans</button>
+    <button class="boton" type="button" data-fuente="Work Sans">Work Sans</button>
+  </div>
+  <p class="t-nota" style="margin-top:var(--e-2)" data-actual></p>
+</div>
+
+<div class="contenedor comparar">
+
+  <div class="caso">
+    <p class="caso__nombre">ficha de producto</p>
+    <h2 class="compra__nombre">ricota</h2>
+    <p class="compra__precio t-cifra">$200.000</p>
+    <p class="compra__disponibilidad"><span class="marca"></span>hecho para vos · 1 a 2 semanas</p>
+    <div class="compra__grupo">
+      <span class="etiqueta" id="et-t">talle</span>
+      <div class="opciones" role="radiogroup" aria-labelledby="et-t">
+        <label class="opcion"><input class="opcion__control" type="radio" name="t"><span class="opcion__cara">s<small>1 a 2 sem.</small></span></label>
+        <label class="opcion"><input class="opcion__control" type="radio" name="t" checked><span class="opcion__cara opcion__cara--ya">m<small>1 a 5 días</small></span></label>
+        <label class="opcion"><input class="opcion__control" type="radio" name="t"><span class="opcion__cara">l<small>1 a 2 sem.</small></span></label>
+      </div>
+    </div>
+    <div class="compra__accion">
+      <button class="boton boton--ancho boton--invertido" type="button">Comprar</button>
+      <p class="compra__letrachica">Pagás en Mercado Pago. No guardo ningún dato de tu tarjeta.</p>
+    </div>
+  </div>
+
+  <div class="caso">
+    <p class="caso__nombre">descripción y desplegables</p>
+    <p class="t-cuerpo">Saco largo de denim, de calce amplio y hombro caído, pensado para usarse abierto y sobre otras capas. El denim arranca rígido y va cediendo con el uso, así que la prenda se acomoda al cuerpo de quien la lleva.</p>
+    <div style="margin-top:var(--e-3)">
+      <details class="desplegable" open>
+        <summary class="desplegable__titulo">cómo está hecha <span class="desplegable__signo" aria-hidden="true"></span></summary>
+        <div class="desplegable__cuerpo t-chico">
+          <p>Denim 100% algodón. Lavar del revés en agua fría. Secar a la sombra.</p>
+        </div>
+      </details>
+      <details class="desplegable">
+        <summary class="desplegable__titulo">origen <span class="desplegable__signo" aria-hidden="true"></span></summary>
+        <div class="desplegable__cuerpo t-chico"><p>La Misa Ricotera.</p></div>
+      </details>
+    </div>
+  </div>
+
+  <div class="caso">
+    <p class="caso__nombre">tarjeta en la grilla</p>
+    <div style="max-width:260px">
+      <div class="prenda__foto">
+        <div class="marco marco--retrato marco--vacio"><span class="marco__archivo">FRAG-SA-01-1.jpg</span></div>
+        <span class="prenda__ya">entrega ya</span>
+      </div>
+      <div class="prenda__datos">
+        <p class="prenda__nombre">la multitud</p>
+        <p class="prenda__precio t-cifra">$150.000</p>
+        <p class="prenda__disponibilidad"><span class="marca"></span>entrega en 1 a 5 días</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="caso">
+    <p class="caso__nombre">confianza</p>
+    <div class="confianza" style="margin:0;grid-template-columns:1fr">
+      <div class="confianza__item">
+        <p class="confianza__titulo">Cuándo llega</p>
+        <p class="confianza__texto">Lo que está hecho sale en 1 a 5 días. Lo que se produce a pedido llega en una o dos semanas desde que se acredita el pago.</p>
+      </div>
+      <div class="confianza__item">
+        <p class="confianza__titulo">Cómo se paga</p>
+        <p class="confianza__texto">El pago se hace dentro de Mercado Pago, no en este sitio.</p>
+        <div class="pagos"><span>Crédito</span><span>Débito</span><span>Rapipago</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script type="module">
+const raiz = document.documentElement;
+const nota = document.querySelector("[data-actual]");
+
+function aplicar(nombre) {
+  raiz.style.setProperty("--sans",
+    '"' + nombre + '", system-ui, -apple-system, "Segoe UI", sans-serif');
+  nota.textContent = "ahora estás viendo: " + nombre;
+  try { localStorage.setItem("nt.prueba-fuente", nombre); } catch {}
+}
+
+document.querySelectorAll("[data-fuente]").forEach((b) => {
+  b.addEventListener("click", () => aplicar(b.dataset.fuente));
+});
+
+let guardada = "Archivo";
+try { guardada = localStorage.getItem("nt.prueba-fuente") || "Archivo"; } catch {}
+aplicar(guardada);
+</script>
+
+</body>
+</html>

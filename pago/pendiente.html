@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pago pendiente — nuevos trapos</title>
+<meta name="description" content="Tu pago está en proceso.">
+<meta property="og:title" content="pago pendiente — nuevos trapos">
+<meta property="og:description" content="Tu pago está en proceso.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.nuevostrapos.com.ar/img/editoriales/hero-1600.webp">
+<meta property="og:url" content="https://www.nuevostrapos.com.ar/pago/pendiente.html">
+<link rel="canonical" href="https://www.nuevostrapos.com.ar/pago/pendiente.html">
+<meta property="og:locale" content="es_AR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/sitio.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/img/wordmark.svg" type="image/svg+xml">
+</head>
+<body>
+
+<a class="saltar" href="#contenido">saltar al contenido</a>
+
+<header class="encabezado doc">
+  <div class="contenedor doc__fila">
+    <div class="doc__izq">
+      <span class="doc__sello"><span class="marca"></span> cba · ar · 26</span>
+      <span>diseño de autor</span>
+    </div>
+    <nav class="doc__der" aria-label="principal">
+      <a href="/">tienda</a>
+      <a href="/sobre.html">sobre la marca</a>
+      <a href="/preguntas.html">preguntas frecuentes</a>
+      <a href="/contacto.html">contacto</a>
+      <a href="#" data-abrir-carrito>carrito <span class="marca" data-carrito-cuenta hidden></span></a>
+    </nav>
+  </div>
+  <div class="aviso" aria-live="off">
+    <span data-aviso>envíos a todo el país</span>
+    <span data-aviso hidden>pagos por Mercado Pago</span>
+  </div>
+</header>
+
+<main id="contenido">
+<div class="contenedor retorno"><svg viewBox="0 0 780 105" fill="currentColor" role="img" aria-label="nuevos trapos" style="width:min(100%,300px);margin-inline:auto"><g font-family="Special Elite, Courier New, monospace" font-size="100"><text x="0" y="80" textLength="240" lengthAdjust="spacing">nuev</text><circle cx="270" cy="54.2" r="25.8"/><text x="300" y="80" textLength="480" lengthAdjust="spacing">s trapos</text></g></svg><h1 class="retorno__estado">tu pago está en proceso.</h1><p class="t-cuerpo">Cuando se acredite te confirmo por mail y ahí arranca la producción.</p><p class="t-chico" style="margin-top:16px">Si elegiste Rapipago o Pago Fácil, todavía falta un paso: Mercado Pago te mandó un cupón por mail y tenés que pagarlo en el local. El pedido queda reservado hasta entonces.</p><p class="rotulo" style="margin-top:24px">número de orden</p><p class="retorno__orden" data-orden>—</p><div class="retorno__acciones"><a class="boton" href="/">Seguir mirando</a><a class="boton" href="/contacto.html">Escribime</a></div></div><script type="module">const q = new URLSearchParams(location.search);const caja = document.querySelector("[data-orden]");caja.textContent = q.get("external_reference") || "no informado";</script>
+</main>
+
+<footer class="contenedor pie">
+  <div class="pie__grilla">
+    <form class="pila-2" data-newsletter novalidate>
+      <label class="etiqueta" for="mail">dejá tu mail y te aviso cuándo sale lo próximo</label>
+      <div class="newsletter">
+        <input class="campo" id="mail" name="mail" type="email" autocomplete="email" required>
+        <button class="boton" type="submit">Enviar</button>
+      </div>
+      <p class="t-nota" data-newsletter-estado role="status"></p>
+    </form>
+    <nav class="pie__links" aria-label="pie">
+      <a href="https://www.instagram.com/nuevostrapos.archivo/" target="_blank" rel="noopener">Instagram</a>
+      <a href="/sobre.html">sobre la marca</a>
+      <a href="/preguntas.html">preguntas frecuentes</a>
+      <a href="/terminos.html">términos y condiciones</a>
+      <a href="/contacto.html">contacto</a>
+    </nav>
+  </div>
+
+  <svg class="pie__wordmark" viewBox="0 0 780 105" fill="currentColor" role="img" aria-label="nuevos trapos">
+    <g font-family="Special Elite, Courier New, monospace" font-size="100">
+      <text x="0" y="80" textLength="240" lengthAdjust="spacing">nuev</text>
+      <circle cx="270" cy="54.2" r="25.8"/>
+      <text x="300" y="80" textLength="480" lengthAdjust="spacing">s trapos</text>
+    </g>
+  </svg>
+
+  <div class="pie__cierre">
+    <span>nuevos trapos · est. 2024</span>
+    <span>@nuevostrapos.archivo</span>
+    <span>Córdoba · Argentina</span>
+  </div>
+</footer>
+
+<script type="module">
+import { aviso, pintarContador, medirEncabezado } from "/js/sitio.js";
+import { conectar as conectarCarrito } from "/js/carrito.js";
+aviso(document.querySelector(".aviso"));
+pintarContador();
+medirEncabezado();
+conectarCarrito();
+document.addEventListener("carrito:cambio", pintarContador);
+document.querySelector("[data-newsletter]").addEventListener("submit", (ev) => {
+  ev.preventDefault();
+  ev.target.querySelector("[data-newsletter-estado]").textContent =
+    "todavía no está conectado.";
+});
+</script>
+
+</body>
+</html>

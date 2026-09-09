@@ -1,0 +1,59 @@
+{
+  "anchos": [
+    900,
+    1600,
+    2400
+  ],
+  "imagenes": {
+    "hero": {
+      "origen": "DSC09527.jpg",
+      "ratio": 0.6667,
+      "orientacion": "vertical"
+    },
+    "ed-01": {
+      "origen": "DSC09443.jpg",
+      "ratio": 1.5,
+      "orientacion": "apaisada"
+    },
+    "ed-02": {
+      "origen": "DSC09248.jpg",
+      "ratio": 0.6667,
+      "orientacion": "vertical"
+    },
+    "ed-03": {
+      "origen": "DSC09190.jpg",
+      "ratio": 0.6667,
+      "orientacion": "vertical"
+    },
+    "ed-04": {
+      "origen": "DSC09163.jpg",
+      "ratio": 1.5001,
+      "orientacion": "apaisada"
+    },
+    "ed-05": {
+      "origen": "DSC09102.jpg",
+      "ratio": 0.6667,
+      "orientacion": "vertical"
+    },
+    "ed-06": {
+      "origen": "DSC09384.jpg",
+      "ratio": 0.6667,
+      "orientacion": "vertical"
+    },
+    "ed-07": {
+      "origen": "DSC09071.jpg",
+      "ratio": 0.6667,
+      "orientacion": "vertical"
+    },
+    "ed-08": {
+      "origen": "DSC09033.jpg",
+      "ratio": 1.5,
+      "orientacion": "apaisada"
+    },
+    "ed-09": {
+      "origen": "DSC09335.jpg",
+      "ratio": 0.6667,
+      "orientacion": "vertical"
+    }
+  }
+}
