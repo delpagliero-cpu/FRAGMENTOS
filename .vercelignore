@@ -1,0 +1,15 @@
+# Lo que se versiona pero NO se publica.
+# Vercel sirve como archivo cualquier cosa que esté en el repo, así que todo lo
+# que no sea el sitio en sí tiene que estar acá o queda accesible por URL.
+
+# El brief tiene notas internas de precios y datos sin cerrar.
+brief_web_nuevostrapos.md
+
+# Los scripts que generan el sitio no hacen falta en el servidor.
+herramientas/
+
+# Página de prueba de tipografías: ya se eligió Poppins.
+muestra.html
+
+# Nombres de variables de entorno. No tiene valores, pero no aporta publicarlo.
+.env.example

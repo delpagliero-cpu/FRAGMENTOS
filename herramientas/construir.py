@@ -188,24 +188,21 @@ def ficha(p, encabezado, pie, cierre):
 
     bloques = ""
     if p["descripcion"]:
-        bloques += ('<div class="ficha__descripcion t-cuerpo"><p>%s</p>%s</div>'
-                    % (e(p["descripcion"]),
-                       ('<p class="pendiente t-nota">%s</p>'
-                        % e(p["descripcion_pendiente"]))
-                       if p.get("descripcion_pendiente") else ""))
-    else:
-        bloques += ('<div class="ficha__descripcion"><p class="pendiente">'
-                    "descripción PENDIENTE</p></div>")
+        # descripcion_pendiente es una nota para Delfi, no para quien compra.
+        bloques += ('<div class="ficha__descripcion t-cuerpo"><p>%s</p></div>'
+                    % e(p["descripcion"]))
 
-    bloques += desplegable("cómo está hecha", lineas or
-                           '<p class="pendiente">PENDIENTE</p>')
+
+    # Un desplegable que se abre y dice PENDIENTE es peor que no estar.
+    if lineas:
+        bloques += desplegable("cómo está hecha", lineas)
     bloques += ('<details class="desplegable" id="medidas">'
                 '<summary class="desplegable__titulo">medidas'
                 '<span class="desplegable__signo" aria-hidden="true"></span>'
                 '</summary><div class="desplegable__cuerpo">%s</div></details>'
                 % tabla_medidas(p))
-    bloques += desplegable("origen", "<p>%s</p>" % e(p["origen"]) if p["origen"]
-                           else '<p class="pendiente">origen PENDIENTE</p>')
+    if p["origen"]:
+        bloques += desplegable("origen", "<p>%s</p>" % e(p["origen"]))
 
     portada = ("/img/prendas/%s-1000.webp" % p["imagenes"][0]
                if p["imagenes"] else "/img/editoriales/hero-1600.webp")
@@ -745,6 +742,29 @@ def main():
         ("terminos.html", "términos y condiciones — nuevos trapos",
          "Términos y condiciones de compra.", pagina_terminos()),
     ]
+    # robots.txt y sitemap.xml: sin esto Google no sabe qué indexar.
+    rutas = ["/", "/sobre.html", "/preguntas.html", "/contacto.html",
+             "/terminos.html"] + ["/producto/%s/" % p["slug"] for p in vendibles]
+    urls = "".join("<url><loc>%s%s</loc></url>" % (SITIO, r) for r in rutas)
+    with open(os.path.join(RAIZ, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>'
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                + urls + "</urlset>")
+    with open(os.path.join(RAIZ, "robots.txt"), "w", encoding="utf-8") as f:
+        # Las pantallas de retorno de pago llevan el número de orden en la URL:
+        # no tienen que quedar indexadas.
+        f.write("\n".join([
+            "User-agent: *",
+            "Allow: /",
+            "Disallow: /pago/",
+            "Disallow: /datos/",
+            "",
+            "Sitemap: %s/sitemap.xml" % SITIO,
+            "",
+        ]))
+    print("  sitemap.xml (%d urls)" % len(rutas))
+    print("  robots.txt")
+
     for archivo, titulo, desc, cuerpo in paginas:
         destino_pag = os.path.join(RAIZ, archivo)
         os.makedirs(os.path.dirname(destino_pag), exist_ok=True)

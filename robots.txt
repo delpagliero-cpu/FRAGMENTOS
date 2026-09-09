@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /pago/
+Disallow: /datos/
+
+Sitemap: https://www.nuevostrapos.com.ar/sitemap.xml

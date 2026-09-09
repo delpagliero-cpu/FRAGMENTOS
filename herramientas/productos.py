@@ -56,6 +56,7 @@ MANGA = {"etiqueta": "manga", "opciones": [
     {"valor": "corta", "precio": 35000}, {"valor": "larga", "precio": 45000}]}
 
 P = []
+NOTAS = {}
 
 
 def add(codigo, slug, nombre, seccion, tipologia, materialidad, tecnica, precio,
@@ -67,11 +68,17 @@ def add(codigo, slug, nombre, seccion, tipologia, materialidad, tecnica, precio,
         "precio": precio, "variantes": variantes,
         "stock": (dict(STOCK_POR_PEDIDO, m="ya") if codigo in HECHO_EN_M
                   else dict(STOCK_POR_PEDIDO)),
-        "descripcion": descripcion, "descripcion_pendiente": pendiente,
+        "descripcion": descripcion,
         "ficha_tecnica": ficha, "composicion_pendiente": True,
         "construccion_pendiente": True, "origen": origen,
         "medidas": json.loads(json.dumps(MEDIDAS)),
-        "imagenes": IMG.get(codigo, []), "nota_interna": nota})
+        "imagenes": IMG.get(codigo, [])})
+    # `nota` queda como recordatorio acá en el código y NO se escribe al JSON:
+    # datos/productos.json lo sirve Vercel en abierto y son notas internas.
+    # Lo mismo con `pendiente`: es un recordatorio interno, no dato de venta.
+    for etiqueta, texto in (("nota", nota), ("pendiente", pendiente)):
+        if texto:
+            NOTAS.setdefault(codigo, []).append("%s: %s" % (etiqueta, texto))
 
 
 # sacos y abrigos
@@ -205,6 +212,13 @@ doc = {
 secs = {}
 for p in P:
     secs.setdefault(p["seccion"], []).append(p["codigo"])
+if NOTAS:
+    print()
+    print("notas internas (no se publican):")
+    for c, ns in NOTAS.items():
+        for n in ns:
+            print("  %s — %s" % (c, n))
+print()
 print("prendas:", len(P))
 for s in doc["secciones"]:
     print("  %-24s %s" % (s, len(secs[s])))

@@ -89,7 +89,6 @@
         "l": "pedido"
       },
       "descripcion": "Saco largo de denim, de calce amplio y hombro caído, pensado para usarse abierto y sobre otras capas. El denim arranca rígido y va cediendo con el uso, así que la prenda se acomoda al cuerpo de quien la lleva. Funciona sobre una remera o cerrado, casi como un vestido.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Denim 100% algodón.",
         "Lavar del revés en agua fría.",
@@ -112,8 +111,7 @@
         "11b429e282",
         "417489ca80",
         "26154ad2b6"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-SA-02",
@@ -138,7 +136,6 @@
         "l": "pedido"
       },
       "descripcion": "Parka de denim con volumen expandido en el cuerpo y en las mangas. La silueta no sigue el entalle: agranda. Admite capas debajo sin ajustar y es la pieza más abrigada de la colección.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Denim 100% algodón.",
         "Lavar del revés en agua fría.",
@@ -162,8 +159,7 @@
         "f5bc82af7b",
         "6db14ff21d",
         "4f4a15238e"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-SA-03",
@@ -188,7 +184,6 @@
         "l": "pedido"
       },
       "descripcion": "Saco largo tejido a mano en lana roja, de punto irregular y superficie viva. Cada pieza se teje entera a mano, así que ninguna sale igual a la otra. Pesa y abriga.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Lana.",
         "Tejido a mano.",
@@ -209,8 +204,7 @@
       },
       "imagenes": [
         "990d6b4356"
-      ],
-      "nota_interna": "revisar este precio, está por debajo del sweater con la misma técnica"
+      ]
     },
     {
       "codigo": "FRAG-VE-01",
@@ -235,7 +229,6 @@
         "l": "pedido"
       },
       "descripcion": "Vestido largo tejido a mano en lana roja, de punto abierto. La textura irregular deja pasar la luz y cambia según cómo cae sobre el cuerpo. Se usa solo o sobre una segunda piel.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Lana.",
         "Tejido a mano.",
@@ -259,8 +252,7 @@
         "d336eb5e4e",
         "3c6ba489b8",
         "a40253c9a9"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-VE-02",
@@ -285,7 +277,6 @@
         "l": "pedido"
       },
       "descripcion": "Vestido de microtul translúcido, que deja ver de manera parcial lo que hay debajo. La transparencia no expone del todo: muestra y reserva al mismo tiempo. Va sobre otra prenda o sobre el cuerpo, según cuánto quieras mostrar.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Microtul.",
         "Lavar a mano en agua fría.",
@@ -306,8 +297,7 @@
       "imagenes": [
         "c3e7b50432",
         "551d61b5d2"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-VE-04",
@@ -332,7 +322,6 @@
         "l": "pedido"
       },
       "descripcion": "Vestido corto de punto en hilo rojo con brillo, de textura irregular y transparencias. Manga corta, espalda profunda que cae drapeada y flecos largos en el ruedo que siguen el movimiento. Se usa solo o sobre una segunda piel.",
-      "descripcion_pendiente": "descripción escrita a partir de las fotos, falta que la apruebes",
       "ficha_tecnica": [],
       "composicion_pendiente": true,
       "construccion_pendiente": true,
@@ -348,8 +337,7 @@
       "imagenes": [
         "24694cb861",
         "ccb0107ec6"
-      ],
-      "nota_interna": "no está en el brief. Falta ficha técnica y origen."
+      ]
     },
     {
       "codigo": "FRAG-VE-03",
@@ -374,7 +362,6 @@
         "l": "pedido"
       },
       "descripcion": "Vestido largo de lycra de seda, manga larga con recortes, estampado con el logo de la marca en rapport sobre toda la superficie. La repetición cubre la prenda entera, sin centro ni jerarquía, y los recortes abren zonas del cuerpo que la estampa no llega a tapar. Se adhiere al cuerpo y acompaña el movimiento.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Lycra de seda.",
         "Estampado por sublimación digital.",
@@ -397,8 +384,7 @@
       "imagenes": [
         "0dec76ec42",
         "ebdb1ad51b"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-PA-01",
@@ -423,7 +409,6 @@
         "l": "pedido"
       },
       "descripcion": "Se sostiene por la estructura de la tela, sin necesidad de calce ajustado.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Denim 100% algodón.",
         "Lavar del revés en agua fría.",
@@ -444,8 +429,7 @@
         "e1f0a4d61c",
         "55523d8902",
         "990d6b4356"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-FA-01",
@@ -470,7 +454,6 @@
         "l": "pedido"
       },
       "descripcion": "Falda de denim. Se lleva con las piezas adherentes de la colección o sola, con el saco encima.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Denim 100% algodón.",
         "Lavar del revés en agua fría.",
@@ -495,8 +478,7 @@
         "b4b2069d7d",
         "dd3b237206",
         "e1ad569f91"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-RE-01",
@@ -521,7 +503,6 @@
         "l": "pedido"
       },
       "descripcion": "Remera de jersey de algodón con estampa frontal en DTF. Calce recto, para usar sola o debajo de las piezas de abrigo.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Jersey 100% algodón.",
         "Estampado DTF.",
@@ -544,8 +525,7 @@
         "e1f0a4d61c",
         "bcd91fcefd",
         "0a27cb1fba"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-RE-02",
@@ -570,7 +550,6 @@
         "l": "pedido"
       },
       "descripcion": "Remera de jersey de algodón con la tapa de Cerdos & Peces estampada en DTF. La imagen se traslada tal como circulaba: recorte, tipografía y contraste duro. Calce recto, para usar sola o como capa base.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Jersey 100% algodón.",
         "Estampado DTF.",
@@ -592,8 +571,7 @@
       "imagenes": [
         "a74632d679",
         "dd5ada16ac"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-RE-03",
@@ -618,7 +596,6 @@
         "l": "pedido"
       },
       "descripcion": "Remera de jersey de algodón con el logo de nuevos trapos estampado en DTF. Es la pieza más directa de la colección y la puerta de entrada a la marca. Calce recto, para todos los días.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Jersey 100% algodón.",
         "Estampado DTF.",
@@ -642,8 +619,7 @@
         "2176d36682",
         "93d2daf86b",
         "21d3a180dd"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-RE-06",
@@ -668,7 +644,6 @@
         "l": "pedido"
       },
       "descripcion": "Remera de microtul, liviana y translúcida, con estampa sublimada. Deja ver parcialmente lo que lleva debajo, así que funciona como capa sobre otra prenda o directamente sobre el cuerpo.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Microtul.",
         "Estampado por sublimación digital.",
@@ -691,8 +666,7 @@
         "db55e4ef49",
         "375502f5bb",
         "74348dad4c"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-RE-07",
@@ -729,7 +703,6 @@
         "l": "pedido"
       },
       "descripcion": "Remera de lycra de seda con el rostro de Charly sublimado. La imagen queda dentro de la fibra, no encima, así que aguanta el uso sin descascararse. El calce es adherente en las dos versiones.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Lycra de seda.",
         "Estampado por sublimación digital.",
@@ -748,8 +721,7 @@
           "l": {}
         }
       },
-      "imagenes": [],
-      "nota_interna": null
+      "imagenes": []
     },
     {
       "codigo": "FRAG-RE-08",
@@ -786,7 +758,6 @@
         "l": "pedido"
       },
       "descripcion": "Remera de lycra de seda con la figura de Batato sublimada. La estampa se integra a la fibra y acompaña el movimiento del cuerpo.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Lycra de seda.",
         "Estampado por sublimación digital.",
@@ -808,8 +779,7 @@
       "imagenes": [
         "85197adb82",
         "0e4d2cc67c"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-RE-09",
@@ -846,7 +816,6 @@
         "l": "pedido"
       },
       "descripcion": "Remera de lycra de seda con estampa pictórica en celeste y rojo. La mancha se extiende por toda la superficie sin repetirse, así que el recorte cae distinto en cada talle.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Lycra de seda.",
         "Estampado por sublimación digital.",
@@ -865,8 +834,7 @@
           "l": {}
         }
       },
-      "imagenes": [],
-      "nota_interna": null
+      "imagenes": []
     },
     {
       "codigo": "FRAG-RE-10",
@@ -903,7 +871,6 @@
         "l": "pedido"
       },
       "descripcion": "Remera de lycra de seda con el logo de nuevos trapos repetido en rapport sobre toda la superficie. La repetición cubre la prenda entera, sin centro ni jerarquía.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Lycra de seda.",
         "Estampado por sublimación digital.",
@@ -922,8 +889,7 @@
           "l": {}
         }
       },
-      "imagenes": [],
-      "nota_interna": null
+      "imagenes": []
     },
     {
       "codigo": "FRAG-SH-01",
@@ -948,7 +914,6 @@
         "l": "pedido"
       },
       "descripcion": "Short de lycra de seda con la estampa de Argentina en llamas, de calce adherente. La imagen queda dentro de la fibra y cubre la pieza entera. Acompaña el cuerpo sin restringirlo y funciona como base debajo de las prendas translúcidas o solo.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Lycra de seda.",
         "Estampado por sublimación digital.",
@@ -969,8 +934,7 @@
       "imagenes": [
         "a74632d679",
         "dd5ada16ac"
-      ],
-      "nota_interna": null
+      ]
     },
     {
       "codigo": "FRAG-SH-02",
@@ -995,7 +959,6 @@
         "l": "pedido"
       },
       "descripcion": "Short de lycra de seda con estampa pictórica en celeste y rojo, la misma de la remera bandera. La mancha se extiende sin repetirse, así que el recorte cae distinto en cada talle. Calce adherente.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Lycra de seda.",
         "Estampado por sublimación digital.",
@@ -1013,8 +976,7 @@
           "l": {}
         }
       },
-      "imagenes": [],
-      "nota_interna": null
+      "imagenes": []
     },
     {
       "codigo": "FRAG-SW-01",
@@ -1039,7 +1001,6 @@
         "l": "pedido"
       },
       "descripcion": "Sweater tejido a mano. El punto es denso y la superficie irregular, con las marcas propias del trabajo manual a la vista. Abriga de verdad y sirve como capa media o como pieza principal.",
-      "descripcion_pendiente": null,
       "ficha_tecnica": [
         "Lana.",
         "Tejido a mano.",
@@ -1061,8 +1022,7 @@
         "130f6a42e3",
         "1480841a9c",
         "ac622df44c"
-      ],
-      "nota_interna": null
+      ]
     }
   ]
 }
