@@ -137,7 +137,7 @@ add("FRAG-PA-01", "dinosaurio", "dinosaurio", "pantalones y faldas", "pantalón"
     "Se sostiene por la estructura de la tela, sin necesidad de calce ajustado.", DENIM,
     "Los Dinosaurios. La tensión entre peso y fragilidad: el denim aporta estructura, y el calce amplio esquiva el entalle disciplinado.")
 
-add("FRAG-FA-01", "plaza", "plaza", "pantalones y faldas", "falda", "denim", None, 95000,
+add("FRAG-FA-01", "plaza", "plaza", "pantalones y faldas", "falda", "denim", None, 70000,
     "Falda de denim. Se lleva con las piezas adherentes de la colección o sola, con el saco encima.", DENIM,
     "Las imágenes del Juicio a las Juntas en la calle. El espacio público como lugar donde la imagen circula y se vuelve visible.")
 
@@ -154,7 +154,7 @@ add("FRAG-RE-03", "trapos", "trapos", "remeras", "remera", "jersey de algodón",
     "Remera de jersey de algodón con el logo de nuevos trapos estampado en DTF. Es la pieza más directa de la colección y la puerta de entrada a la marca. Calce recto, para todos los días.", DTF,
     "La marca como archivo. El wordmark funciona como el contenedor que ordena la saturación del resto de la colección.")
 
-add("FRAG-RE-06", "pais-de-las-maravillas", "país de las maravillas", "remeras", "remera", "microtul", "sublimación", 55000,
+add("FRAG-RE-06", "pais-de-las-maravillas", "país de las maravillas", "remeras", "remera", "microtul", "sublimación", 45000,
     "Remera de microtul, liviana y translúcida, con estampa sublimada. Deja ver parcialmente lo que lleva debajo, así que funciona como capa sobre otra prenda o directamente sobre el cuerpo.",
     ["Microtul.", "Estampado por sublimación digital.", "Lavar a mano en agua fría.",
      "No retorcer.", "No planchar en contacto directo."],
@@ -179,12 +179,12 @@ add("FRAG-RE-10", "remera-rapport", "rapport", "remeras", "remera", "lycra de se
     variantes=json.loads(json.dumps(MANGA)))
 
 # shorts
-add("FRAG-SH-01", "2001", "2001", "shorts", "short", "lycra de seda", "sublimación", 75000,
+add("FRAG-SH-01", "2001", "2001", "shorts", "short", "lycra de seda", "sublimación", 55000,
     "Short de lycra de seda con la estampa de Argentina en llamas, de calce adherente. La imagen queda dentro de la fibra y cubre la pieza entera. Acompaña el cuerpo sin restringirlo y funciona como base debajo de las prendas translúcidas o solo.",
     LYCRA,
     "La crisis de 2001. El registro de la calle en llamas como imagen que vuelve.")
 
-add("FRAG-SH-02", "short-bandera", "bandera", "shorts", "short", "lycra de seda", "sublimación", 75000,
+add("FRAG-SH-02", "short-bandera", "bandera", "shorts", "short", "lycra de seda", "sublimación", 55000,
     "Short de lycra de seda con estampa pictórica en celeste y rojo, la misma de la remera bandera. La mancha se extiende sin repetirse, así que el recorte cae distinto en cada talle. Calce adherente.",
     LYCRA,
     "Paleta de la colección. El celeste opaco como identidad nacional puesta en crisis y el rojo como herida histórica, juntos y sin resolver.")
