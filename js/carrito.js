@@ -11,6 +11,9 @@ import { datos, precio, precioDesde, escapar, foto } from "/js/sitio.js";
 
 const CLAVE = "nt.carrito";
 const WA = "https://wa.me/5493534136713";
+/* Los datos de envío se recuerdan para no tener que reescribirlos, pero se
+   borran al confirmar la compra: no hay motivo para dejar un DNI guardado. */
+const DATOS = "nt.envio";
 const MAX_POR_ITEM = 10;
 
 /* estado ----------------------------------------------------------------- */
@@ -240,23 +243,114 @@ async function pintar() {
     bloque.hidden = !bloque.hidden;
   });
 
-  panel.querySelector("[data-mp]")?.addEventListener("click", pagar);
+  panel.querySelector("[data-mp]")?.addEventListener("click", pedirDatos);
 }
 
 /* checkout --------------------------------------------------------------- */
 
-async function pagar(ev) {
-  const boton = ev.currentTarget;
-  const estado = panel.querySelector("[data-estado]");
+/* datos de envío --------------------------------------------------------- */
+
+const CAMPOS = [
+  ["nombre", "nombre y apellido", "text", "name", true],
+  ["celular", "celular", "tel", "tel", true],
+  ["dni", "dni", "text", "off", true],
+  ["direccion", "dirección y número", "text", "street-address", true],
+  ["localidad", "localidad", "text", "address-level2", true],
+  ["cp", "código postal", "text", "postal-code", true],
+];
+
+function datosGuardados() {
+  try { return JSON.parse(localStorage.getItem(DATOS)) || {}; } catch { return {}; }
+}
+
+async function pedirDatos() {
+  const previos = datosGuardados();
+  const { total } = await detalle();
+
+  panel.innerHTML =
+    '<div class="carrito__cab">' +
+    '<p class="kicker">datos de envío</p>' +
+    '<button class="carrito__cerrar" type="button" data-cerrar ' +
+    'aria-label="cerrar el carrito">✕</button></div>' +
+    '<form class="carrito__form" data-envio novalidate>' +
+    CAMPOS.map(([n, etiq, tipo, auto]) =>
+      '<p><label class="etiqueta" for="c-' + n + '">' + etiq + '</label>' +
+      '<input class="campo" id="c-' + n + '" name="' + n + '" type="' + tipo +
+      '" autocomplete="' + auto + '" required value="' +
+      escapar(previos[n] || "") + '"></p>').join("") +
+
+    '<fieldset style="border:0"><legend class="etiqueta">envío</legend>' +
+    '<div class="opciones" style="flex-direction:column;align-items:stretch">' +
+    '<label class="opcion"><input class="opcion__control" type="radio" ' +
+    'name="envio" value="cordoba"' + (previos.envio !== "pais" ? " checked" : "") +
+    '><span class="opcion__cara" style="justify-content:flex-start">' +
+    'Córdoba capital · sin cargo</span></label>' +
+    '<label class="opcion"><input class="opcion__control" type="radio" ' +
+    'name="envio" value="pais"' + (previos.envio === "pais" ? " checked" : "") +
+    '><span class="opcion__cara" style="justify-content:flex-start">' +
+    'Resto del país · a coordinar</span></label>' +
+    "</div></fieldset>" +
+
+    '<p class="t-nota" data-nota-envio></p>' +
+    '<p class="carrito__estado t-nota" role="alert" data-estado></p>' +
+    '<p class="carrito__total"><span class="rotulo">total</span>' +
+    '<span class="t-cifra">' + precio(total) + "</span></p>" +
+    '<button class="boton boton--ancho boton--invertido" type="submit">' +
+    "Ir a pagar</button>" +
+    '<button class="boton boton--ancho" type="button" data-volver ' +
+    'style="margin-top:8px">Volver al carrito</button>' +
+    "</form>";
+
+  panel.querySelector("[data-cerrar]").addEventListener("click", cerrar);
+  panel.querySelector("[data-volver]").addEventListener("click", pintar);
+
+  const nota = panel.querySelector("[data-nota-envio]");
+  const verNota = () => {
+    const pais = panel.querySelector('input[name="envio"]:checked').value === "pais";
+    nota.textContent = pais
+      ? "Te escribo para coordinar el costo del envío antes de despacharlo."
+      : "En la ciudad de Córdoba el envío no tiene costo.";
+  };
+  panel.querySelectorAll('input[name="envio"]').forEach(
+    (r) => r.addEventListener("change", verNota));
+  verNota();
+
+  panel.querySelector("[data-envio]").addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    enviar(ev.currentTarget);
+  });
+}
+
+async function enviar(form) {
+  const estado = form.querySelector("[data-estado]");
+  const boton = form.querySelector('button[type="submit"]');
+  const datos = {};
+  for (const [n] of CAMPOS) datos[n] = form.elements[n].value.trim();
+  datos.envio = form.elements.envio.value;
+
+  const falta = CAMPOS.find(([n]) => !datos[n]);
+  if (falta) {
+    estado.textContent = "Falta completar " + falta[1] + ".";
+    form.elements[falta[0]].focus();
+    return;
+  }
+  if (datos.celular.replace(/\D/g, "").length < 8) {
+    estado.textContent = "Revisá el celular: faltan números.";
+    form.elements.celular.focus();
+    return;
+  }
+
+  try { localStorage.setItem(DATOS, JSON.stringify(datos)); } catch {}
+
+  estado.textContent = "";
   boton.disabled = true;
   boton.textContent = "Preparando el pago…";
-  estado.textContent = "";
 
   try {
     const r = await fetch("/api/crear-preferencia", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: leer() })
+      body: JSON.stringify({ items: leer(), envio: datos })
     });
     const data = await r.json();
     if (!r.ok || !data.init_point) {
@@ -265,17 +359,16 @@ async function pagar(ev) {
     location.href = data.init_point;
   } catch (e) {
     boton.disabled = false;
-    boton.textContent = "Pagar con Mercado Pago";
-    /* Si el pago falla, la venta no se pierde: se arma un mensaje de WhatsApp
-       con el pedido ya escrito para que sólo tenga que apretar enviar. */
-    const { lineas } = await detalle();
+    boton.textContent = "Ir a pagar";
     const salto = String.fromCharCode(10);
-    const detalleTexto = lineas.map((l) =>
+    const { lineas } = await detalle();
+    const texto = lineas.map((l) =>
       l.prenda.nombre + " · talle " + l.item.talle +
       (l.item.variante ? " · " + l.item.variante : "") +
       " x" + l.item.cantidad).join(salto);
     const mensaje = encodeURIComponent(
-      "Hola! Quiero encargar:" + salto + detalleTexto);
+      "Hola! Quiero encargar:" + salto + texto + salto + salto +
+      datos.nombre + " · " + datos.celular);
     estado.innerHTML =
       "No se pudo abrir el pago. " +
       '<a href="' + WA + "?text=" + mensaje + '" target="_blank" ' +

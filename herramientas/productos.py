@@ -195,6 +195,12 @@ add("FRAG-SW-01", "a-mano", "a mano", "sweaters", "sweater", "lana", "tejido art
     LANA + ["Secar en plano."],
     "La Misa Ricotera. El hacer manual como construcción de comunidad: las irregularidades no se corrigen, quedan.")
 
+add("FRAG-TEST", "prueba", "prueba de pago", "remeras", "prueba", None, None, 100,
+    "Producto de prueba para verificar el circuito de pago. No es una prenda "
+    "a la venta y no aparece en la tienda.",
+    [], None)
+P[-1]["oculto"] = True
+
 doc = {
     "moneda": "ARS",
     "anchos_imagen": man["anchos"],

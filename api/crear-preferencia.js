@@ -113,11 +113,40 @@ module.exports = async function handler(req, res) {
     });
   }
 
+  /* Datos de envío. No hay base de datos: viajan dentro de la preferencia,
+     así que Delfi los ve en el detalle de la orden en su panel de Mercado
+     Pago, incluso si el pago fue en efectivo y se acreditó dos días después. */
+  const env = (entrada && entrada.envio) || {};
+  const texto = (v, max) => String(v == null ? "" : v).trim().slice(0, max || 120);
+  const envio = {
+    nombre: texto(env.nombre),
+    celular: texto(env.celular, 40),
+    dni: texto(env.dni, 20),
+    direccion: texto(env.direccion, 160),
+    localidad: texto(env.localidad),
+    cp: texto(env.cp, 20),
+    zona: env.envio === "pais" ? "resto del país" : "Córdoba capital",
+  };
+  if (!envio.nombre || !envio.celular || !envio.direccion) {
+    return res.status(400).json({ error: "faltan los datos de envío" });
+  }
+
   const orden = numeroDeOrden();
   const base = sitio.replace(/\/+$/, "");
 
+  const partes = envio.nombre.split(" ");
   const preferencia = {
     items,
+    payer: {
+      name: partes[0],
+      surname: partes.slice(1).join(" ") || partes[0],
+      phone: { number: envio.celular },
+      identification: { type: "DNI", number: envio.dni },
+      address: {
+        street_name: envio.direccion,
+        zip_code: envio.cp,
+      },
+    },
     external_reference: orden,
     statement_descriptor: "NUEVOSTRAPOS",
     /* Mercado Pago rechaza localhost acá: tiene que ser el dominio real. */
@@ -131,7 +160,16 @@ module.exports = async function handler(req, res) {
     /* binary_mode false deja pasar los pagos en efectivo, que entran como
        pendientes hasta que la persona paga en Rapipago o Pago Fácil. */
     binary_mode: false,
-    metadata: { orden }
+    metadata: {
+      orden,
+      envio_nombre: envio.nombre,
+      envio_celular: envio.celular,
+      envio_dni: envio.dni,
+      envio_direccion: envio.direccion,
+      envio_localidad: envio.localidad,
+      envio_cp: envio.cp,
+      envio_zona: envio.zona,
+    }
   };
 
   try {
@@ -156,7 +194,8 @@ module.exports = async function handler(req, res) {
     const destino = enPruebas ? (data.sandbox_init_point || data.init_point)
                               : data.init_point;
 
-    console.log("preferencia creada", { orden, id: data.id, enPruebas });
+    console.log("preferencia creada",
+                { orden, id: data.id, enPruebas, zona: envio.zona });
     return res.status(200).json({ init_point: destino, orden });
   } catch (e) {
     console.error("error creando la preferencia", e);

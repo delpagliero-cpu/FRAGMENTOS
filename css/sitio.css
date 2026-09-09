@@ -1037,3 +1037,26 @@
   .letrachica { grid-template-columns: 1fr; gap: 2px var(--e-2); }
   .letrachica dd { margin-bottom: var(--e-1); }
 }
+
+/* formulario de envío en el carrito --------------------------------------- */
+
+.carrito__form {
+  padding: var(--e-3);
+}
+
+.carrito__form p { margin-bottom: var(--e-2); }
+
+.carrito__form fieldset { margin-bottom: var(--e-2); }
+
+.carrito__form legend { padding: 0; margin-bottom: var(--e-1); }
+
+.carrito__form .opcion { width: 100%; }
+
+.carrito__form .opcion__cara {
+  width: 100%;
+  padding-inline: var(--e-2);
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--sans);
+  font-size: var(--t-14);
+}

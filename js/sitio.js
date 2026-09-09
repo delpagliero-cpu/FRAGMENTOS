@@ -42,6 +42,7 @@ export function disponibilidad(p) {
 /* Sin precio no se puede comprar, así que la prenda no se muestra en la
    tienda. Vuelve sola en cuanto se le carga el precio en productos.json. */
 export function publicable(p) {
+  if (p.oculto) return false;
   if (p.variantes && p.variantes.opciones.length) {
     return p.variantes.opciones.some((o) => o.precio != null);
   }

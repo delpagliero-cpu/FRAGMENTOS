@@ -270,7 +270,7 @@ TEMPLATE = """<!DOCTYPE html>
             <dt>transferencia</dt>
             <dd>alias <strong>nuevostrapos.archivo</strong></dd>
             <dt>envío</dt>
-            <dd>A todo el país. <a href="/contacto.html">Escribime</a> para el costo a tu zona.</dd>
+            <dd>Sin cargo en Córdoba capital. Al resto del país, a coordinar.</dd>
           </dl>
         </div>
       </div>
@@ -495,7 +495,8 @@ PREGUNTAS = [
     # Copy escrito por mí, no está en el brief: reemplaza los dos PENDIENTE que
     # se veían en la página. No afirma nada que no sepamos.
     ("¿Hacen envíos?",
-     "Sí, a todo el país. Escribime y te paso el costo hasta tu zona.", False),
+     "Sí. En la ciudad de Córdoba el envío no tiene costo. Al resto del "
+     "país lo coordinamos por WhatsApp antes de despachar.", False),
     ("¿Puedo retirar en persona?",
      "Escribime y lo vemos.", False),
     ("¿Cómo cuido las prendas?",
@@ -748,6 +749,8 @@ def main():
         shutil.rmtree(destino)
 
     vendibles = [p for p in prods["prendas"] if precio_publicable(p)]
+    # La de prueba tiene ficha propia pero no entra al sitemap.
+    listadas = [p for p in vendibles if not p.get("oculto")]
     ocultas = [p["codigo"] for p in prods["prendas"] if not precio_publicable(p)]
 
     for i, p in enumerate(vendibles):
@@ -801,7 +804,7 @@ def main():
     ]
     # robots.txt y sitemap.xml: sin esto Google no sabe qué indexar.
     rutas = ["/", "/sobre.html", "/preguntas.html", "/contacto.html",
-             "/terminos.html"] + ["/producto/%s/" % p["slug"] for p in vendibles]
+             "/terminos.html"] + ["/producto/%s/" % p["slug"] for p in listadas]
     urls = "".join("<url><loc>%s%s</loc></url>" % (SITIO, r) for r in rutas)
     with open(os.path.join(RAIZ, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>'
