@@ -1060,3 +1060,40 @@
   font-family: var(--sans);
   font-size: var(--t-14);
 }
+
+/* editoriales ------------------------------------------------------------- */
+
+/* Regla única: las fotos decorativas NO se recortan. Antes iban con altura
+   fija y object-fit cover, y como casi todas son verticales (2:3) metidas en
+   una caja de 1.9 de ancho, se veía un tercio de la foto y la gente quedaba
+   sin cabeza. Ahora cada una conserva su proporción real. */
+.editorial {
+  margin-block: var(--e-6);
+}
+
+.editorial img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Reserva el alto antes de cargar. Es la proporción del original, así que
+     la foto entra entera: no hay recorte ni salto de layout. */
+  aspect-ratio: var(--ratio, 0.667);
+  background: var(--papel-2);
+}
+
+/* La vertical va en columna: a ancho completo sería altísima. */
+.editorial--vertical {
+  max-width: min(100%, 620px);
+  margin-inline: auto;
+}
+
+.editorial--apaisada {
+  max-width: 100%;
+}
+
+.editorial--hero {
+  margin-top: 0;
+}
+
+/* El cierre de la ficha respira igual que el resto. */
+.ficha__editorial .editorial { margin-bottom: 0; }

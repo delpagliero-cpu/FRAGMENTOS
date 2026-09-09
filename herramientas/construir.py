@@ -265,10 +265,6 @@ TEMPLATE = """<!DOCTYPE html>
           <dl class="letrachica">
             <dt>pago</dt>
             <dd>Se procesa en Mercado Pago. No guardo ningún dato de tu tarjeta.</dd>
-            <dt>medios</dt>
-            <dd class="letrachica__sellos"><span>crédito</span><span>débito</span><span>Rapipago</span><span>Pago Fácil</span><span>dinero en cuenta</span><span>cuotas sin tarjeta</span></dd>
-            <dt>transferencia</dt>
-            <dd>alias <strong>nuevostrapos.archivo</strong></dd>
             <dt>envío</dt>
             <dd>Sin cargo en Córdoba capital. Al resto del país, a coordinar.</dd>
           </dl>
@@ -415,7 +411,36 @@ document.querySelector("[data-newsletter]").addEventListener("submit", (ev) => {
 """
 
 
-def editorial(nombre, alto="clamp(260px, 52vh, 620px)"):
+ED = json.loads(open(os.path.join(RAIZ, "img", "editoriales.json"),
+                     encoding="utf-8").read())["imagenes"]
+
+
+def editorial(nombre, clase=""):
+    """Las editoriales son casi todas verticales (2:3).
+
+    Meterlas en una caja ancha y baja recortaba dos tercios de la foto y
+    dejaba a la gente sin cabeza. Ahora la vertical va en una columna angosta
+    y con su proporción real, sin recortar nada; la apaisada sí ocupa el ancho.
+    """
+    meta = ED.get(nombre, {})
+    orient = meta.get("orientacion", "vertical")
+    # La proporción real reserva el espacio antes de que la foto cargue: sin
+    # esto la página salta, y como coincide con la del original, no recorta.
+    ratio = meta.get("ratio", 0.667)
+    return (
+        '<div class="editorial editorial--%s %s" style="--ratio:%s">'
+        '<img src="/img/editoriales/%s-1600.webp" '
+        'srcset="/img/editoriales/%s-900.webp 900w, '
+        '/img/editoriales/%s-1600.webp 1600w, '
+        '/img/editoriales/%s-2400.webp 2400w" '
+        'sizes="%s" alt="" loading="lazy" decoding="async"></div>'
+        % (orient, clase, ratio, nombre, nombre, nombre, nombre,
+           "(min-width: 900px) 620px, 100vw" if orient == "vertical"
+           else "100vw")
+    )
+
+
+def editorial_viejo(nombre, alto="clamp(260px, 52vh, 620px)"):
     return (
         '<div class="sobre__imagen"><img src="/img/editoriales/%s-1600.webp" '
         'srcset="/img/editoriales/%s-900.webp 900w, '
@@ -430,7 +455,7 @@ def editorial(nombre, alto="clamp(260px, 52vh, 620px)"):
 # quedó en el home para que se entre y se vean las prendas de una.
 SOBRE = (
     '<h1 class="solo-lector">sobre la marca</h1>'
-    + editorial("hero", "clamp(320px, 62vh, 720px)") +
+    + editorial("hero", "editorial--hero") +
     '<div class="contenedor sobre">'
 
     '<p class="kicker">la colección</p>'
@@ -755,14 +780,7 @@ def main():
 
     for i, p in enumerate(vendibles):
         cierre = CIERRES[i % len(CIERRES)]
-        img_cierre = (
-            '<img src="/img/editoriales/%s-1600.webp" '
-            'srcset="/img/editoriales/%s-900.webp 900w, '
-            '/img/editoriales/%s-1600.webp 1600w, '
-            '/img/editoriales/%s-2400.webp 2400w" sizes="100vw" '
-            'alt="" loading="lazy" decoding="async" '
-            'style="width:100%%;height:clamp(320px,60vh,700px);object-fit:cover">'
-            % (cierre, cierre, cierre, cierre))
+        img_cierre = editorial(cierre)
 
         precios = {}
         if p["variantes"]:
