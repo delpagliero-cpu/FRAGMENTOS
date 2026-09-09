@@ -10,6 +10,7 @@
 import { datos, precio, precioDesde, escapar, foto } from "/js/sitio.js";
 
 const CLAVE = "nt.carrito";
+const WA = "https://wa.me/5493534136713";
 const MAX_POR_ITEM = 10;
 
 /* estado ----------------------------------------------------------------- */
@@ -263,8 +264,20 @@ async function pagar(ev) {
   } catch (e) {
     boton.disabled = false;
     boton.textContent = "Pagar con Mercado Pago";
-    estado.textContent =
-      "No se pudo abrir el pago. Probá de nuevo o escribime por WhatsApp.";
+    /* Si el pago falla, la venta no se pierde: se arma un mensaje de WhatsApp
+       con el pedido ya escrito para que sólo tenga que apretar enviar. */
+    const { lineas } = await detalle();
+    const salto = String.fromCharCode(10);
+    const detalleTexto = lineas.map((l) =>
+      l.prenda.nombre + " · talle " + l.item.talle +
+      (l.item.variante ? " · " + l.item.variante : "") +
+      " x" + l.item.cantidad).join(salto);
+    const mensaje = encodeURIComponent(
+      "Hola! Quiero encargar:" + salto + detalleTexto);
+    estado.innerHTML =
+      "No se pudo abrir el pago. " +
+      '<a href="' + WA + "?text=" + mensaje + '" target="_blank" ' +
+      'rel="noopener">Escribime por WhatsApp</a> y lo cerramos por ahí.';
     console.error(e);
   }
 }
