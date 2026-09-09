@@ -929,41 +929,6 @@
         "1480841a9c",
         "ac622df44c"
       ]
-    },
-    {
-      "codigo": "FRAG-TEST",
-      "slug": "prueba",
-      "nombre": "prueba de pago",
-      "seccion": "remeras",
-      "tipologia": "prueba",
-      "materialidad": null,
-      "tecnica": null,
-      "talles": [
-        "m",
-        "l"
-      ],
-      "estado": "disponible",
-      "plazo": "1 a 2 semanas",
-      "precio": 100,
-      "variantes": null,
-      "stock": {
-        "m": "pedido",
-        "l": "pedido"
-      },
-      "descripcion": "Producto de prueba para verificar el circuito de pago. No es una prenda a la venta y no aparece en la tienda.",
-      "ficha_tecnica": [],
-      "composicion_pendiente": true,
-      "construccion_pendiente": true,
-      "origen": null,
-      "medidas": {
-        "columnas": [],
-        "valores": {
-          "m": {},
-          "l": {}
-        }
-      },
-      "imagenes": [],
-      "oculto": true
     }
   ]
 }
