@@ -33,9 +33,8 @@
        --sans  cuerpo, descripciones, botones, formularios. Lo que se lee.
        --mono  rótulos, precios, metadatos. La textura de archivo.
        --sello wordmark y kickers. La voz de la marca.
-     Para probar otra sans, cambiar sólo --sans y el <link> de Google Fonts.
-     Archivo es de Omnibus-Type, fundición argentina, y aguanta bien en chico. */
-  --sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+     Para probar otra sans, cambiar sólo --sans y el <link> de Google Fonts. */
+  --sans: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "Courier Prime", "Courier New", monospace;
   --sello: "Special Elite", "Courier New", monospace;
 
