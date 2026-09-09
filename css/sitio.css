@@ -969,3 +969,23 @@
   padding-block: 17px;
   margin-block: -17px;
 }
+
+/* encuadre de la grilla --------------------------------------------------- */
+
+/* Muchas fotos son de cuerpo entero. En la grilla lo que tiene que verse es
+   la prenda, así que se acerca la zona donde está: arriba en las de torso,
+   abajo en las de pierna. La ficha sigue mostrando la foto completa. */
+.prenda__foto .marco { overflow: hidden; }
+
+.prenda__foto .marco__img {
+  transform: scale(var(--zoom, 1));
+  transform-origin: var(--foco, 50% 50%);
+}
+
+.prenda__enlace[data-tipo="remera"] { --zoom: 1.75; --foco: 50% 20%; }
+.prenda__enlace[data-tipo="sweater"] { --zoom: 1.45; --foco: 50% 24%; }
+.prenda__enlace[data-tipo="short"] { --zoom: 1.6; --foco: 50% 60%; }
+.prenda__enlace[data-tipo="pantalón"] { --zoom: 1.35; --foco: 50% 62%; }
+.prenda__enlace[data-tipo="falda"] { --zoom: 1.4; --foco: 50% 55%; }
+
+/* Los sacos, las parkas y los vestidos se ven mejor enteros: no se acercan. */

@@ -211,8 +211,10 @@ async function pintar() {
       '<p class="rotulo">transferencia bancaria</p>' +
       '<p class="t-chico" style="margin-top:8px">Monto: ' +
       '<span class="t-cifra">' + precio(total) + "</span></p>" +
-      '<p class="t-chico" style="margin-top:8px">Escribime y te paso el alias. ' +
-      "Con el comprobante te confirmo el pedido.</p>" +
+      '<p class="t-chico" style="margin-top:8px">Alias: ' +
+      '<strong>nuevostrapos.archivo</strong></p>' +
+      '<p class="t-chico" style="margin-top:8px">Mandame el comprobante por ' +
+      "WhatsApp y te confirmo el pedido.</p>" +
       '<p style="margin-top:8px"><a class="boton" href="/contacto.html">' +
       "Ir a contacto</a></p></div>" +
       '<p class="compra__letrachica" style="margin-top:16px">Pagás dentro de ' +

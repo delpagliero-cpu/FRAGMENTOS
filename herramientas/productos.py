@@ -7,7 +7,7 @@ man = json.loads((RAIZ / "img" / "manifiesto.json").read_text(encoding="utf-8"))
 IMG = {k: v["imagenes"] for k, v in man["prendas"].items()}
 RATIO = man["ratios"]
 
-TALLES = ["s", "m", "l"]
+TALLES = ["m", "l"]
 
 # Disponibilidad por talle. Puede haber un M hecho y un L que haya que producir,
 # así que el estado es del talle y no de la prenda.
@@ -31,10 +31,9 @@ HECHO_EN_M = [
     "FRAG-FA-01",  # plaza — la pollera (tiene dos unidades)
     "FRAG-RE-01",  # quién es la ley
     "FRAG-RE-02",  # cerdos
-    "FRAG-RE-07",  # charly    ) las cuatro de lycra, en las dos mangas:
-    "FRAG-RE-08",  # batato    ) quien compra elige corta o larga y las dos
-    "FRAG-RE-09",  # bandera   ) salen en 1 a 5 días.
-    "FRAG-RE-10",  # rapport   )
+    "FRAG-RE-07",  # charly   ) las de lycra, en las dos mangas: quien
+    "FRAG-RE-08",  # batato   ) compra elige corta o larga y las dos
+    "FRAG-RE-10",  # rapport  ) salen en 1 a 5 días.
     "FRAG-SH-01",  # 2001 — short de lycra
     "FRAG-SH-02",  # bandera — short de lycra
     "FRAG-SW-01",  # a mano — sweater tejido
@@ -61,13 +60,18 @@ NOTAS = {}
 
 def add(codigo, slug, nombre, seccion, tipologia, materialidad, tecnica, precio,
         descripcion, ficha, origen, variantes=None, pendiente=None, nota=None):
+    # El nombre de fantasía solo no dice qué es la prenda. Se antepone la
+    # tipología salvo que el nombre ya la traiga ("vestido rojo").
+    completo = (nombre if nombre.startswith(tipologia)
+                else "%s %s" % (tipologia, nombre))
     P.append({
-        "codigo": codigo, "slug": slug, "nombre": nombre, "seccion": seccion,
+        "codigo": codigo, "slug": slug, "nombre": completo, "seccion": seccion,
         "tipologia": tipologia, "materialidad": materialidad, "tecnica": tecnica,
         "talles": TALLES, "estado": "disponible", "plazo": "1 a 2 semanas",
         "precio": precio, "variantes": variantes,
-        "stock": (dict(STOCK_POR_PEDIDO, m="ya") if codigo in HECHO_EN_M
-                  else dict(STOCK_POR_PEDIDO)),
+        # El M es el que Delfi tiene hecho. El L siempre se produce a pedido.
+        "stock": {"m": "ya" if codigo in HECHO_EN_M else "pedido",
+                  "l": "pedido"},
         "descripcion": descripcion,
         "ficha_tecnica": ficha, "composicion_pendiente": True,
         "construccion_pendiente": True, "origen": origen,
@@ -111,9 +115,13 @@ add("FRAG-VE-02", "alicia", "alicia", "vestidos", "vestido", "microtul", None, 7
 
 # Fuera del brief. La descripción la escribí mirando las fotos, a pedido de
 # Delfi; falta que la apruebe. Precio, ficha técnica y origen siguen vacíos.
-add("FRAG-VE-04", "vestido-rojo", "vestido rojo", "vestidos", "vestido", None, None, 100000,
+add("FRAG-VE-04", "vestido-rojo", "vestido rojo", "vestidos", "vestido", "punto", "tejido artesanal", 100000,
     "Vestido corto de punto en hilo rojo con brillo, de textura irregular y transparencias. Manga corta, espalda profunda que cae drapeada y flecos largos en el ruedo que siguen el movimiento. Se usa solo o sobre una segunda piel.",
-    [], None,
+    ["Tejido de punto en hilo con brillo.",
+     "Manga corta y espalda descubierta con caída drapeada.",
+     "Flecos en el ruedo.",
+     "Lavar a mano en agua fría con jabón neutro.",
+     "No retorcer. Secar en plano sobre una toalla."], None,
     pendiente="descripción escrita a partir de las fotos, falta que la apruebes",
     nota="no está en el brief. Falta ficha técnica y origen.")
 
@@ -162,12 +170,6 @@ add("FRAG-RE-08", "batato", "batato", "remeras", "remera", "lycra de seda", "sub
     "Remera de lycra de seda con la figura de Batato sublimada. La estampa se integra a la fibra y acompaña el movimiento del cuerpo.",
     LYCRA_P,
     "Batato Barea. La teatralidad y el desborde: el cuerpo disidente que se construye a sí mismo como escena.",
-    variantes=json.loads(json.dumps(MANGA)))
-
-add("FRAG-RE-09", "remera-bandera", "bandera", "remeras", "remera", "lycra de seda", "sublimación", 35000,
-    "Remera de lycra de seda con estampa pictórica en celeste y rojo. La mancha se extiende por toda la superficie sin repetirse, así que el recorte cae distinto en cada talle.",
-    LYCRA_P,
-    "Paleta de la colección. El celeste opaco como identidad nacional puesta en crisis y el rojo como herida histórica, juntos y sin resolver.",
     variantes=json.loads(json.dumps(MANGA)))
 
 add("FRAG-RE-10", "remera-rapport", "rapport", "remeras", "remera", "lycra de seda", "sublimación", 35000,

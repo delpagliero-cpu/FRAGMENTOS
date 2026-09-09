@@ -31,6 +31,7 @@
     "0e4d2cc67c": 0.6667,
     "2cf172d3ef": 0.8,
     "11b429e282": 0.6667,
+    "81476572ec": 0.6667,
     "417489ca80": 0.8,
     "26154ad2b6": 0.6667,
     "fb6531e5ce": 0.6667,
@@ -69,13 +70,12 @@
     {
       "codigo": "FRAG-SA-01",
       "slug": "ricota",
-      "nombre": "ricota",
+      "nombre": "saco ricota",
       "seccion": "sacos y abrigos",
       "tipologia": "saco",
       "materialidad": "denim",
       "tecnica": null,
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -84,7 +84,6 @@
       "precio": 200000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -101,7 +100,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -116,13 +114,12 @@
     {
       "codigo": "FRAG-SA-02",
       "slug": "la-multitud",
-      "nombre": "la multitud",
+      "nombre": "parka la multitud",
       "seccion": "sacos y abrigos",
       "tipologia": "parka",
       "materialidad": "denim",
       "tecnica": null,
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -131,7 +128,6 @@
       "precio": 150000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -148,7 +144,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -164,13 +159,12 @@
     {
       "codigo": "FRAG-SA-03",
       "slug": "tejido-social",
-      "nombre": "tejido social",
+      "nombre": "saco largo tejido social",
       "seccion": "sacos y abrigos",
       "tipologia": "saco largo",
       "materialidad": "lana",
       "tecnica": "tejido artesanal",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -179,7 +173,6 @@
       "precio": 75000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -197,7 +190,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -209,13 +201,12 @@
     {
       "codigo": "FRAG-VE-01",
       "slug": "misa",
-      "nombre": "misa",
+      "nombre": "vestido misa",
       "seccion": "vestidos",
       "tipologia": "vestido",
       "materialidad": "lana",
       "tecnica": "tejido artesanal",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -224,7 +215,6 @@
       "precio": 350000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "pedido",
         "l": "pedido"
       },
@@ -242,7 +232,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -257,13 +246,12 @@
     {
       "codigo": "FRAG-VE-02",
       "slug": "alicia",
-      "nombre": "alicia",
+      "nombre": "vestido alicia",
       "seccion": "vestidos",
       "tipologia": "vestido",
       "materialidad": "microtul",
       "tecnica": null,
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -272,7 +260,6 @@
       "precio": 75000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "pedido",
         "l": "pedido"
       },
@@ -289,7 +276,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -305,10 +291,9 @@
       "nombre": "vestido rojo",
       "seccion": "vestidos",
       "tipologia": "vestido",
-      "materialidad": null,
-      "tecnica": null,
+      "materialidad": "punto",
+      "tecnica": "tejido artesanal",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -317,19 +302,23 @@
       "precio": 100000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
       "descripcion": "Vestido corto de punto en hilo rojo con brillo, de textura irregular y transparencias. Manga corta, espalda profunda que cae drapeada y flecos largos en el ruedo que siguen el movimiento. Se usa solo o sobre una segunda piel.",
-      "ficha_tecnica": [],
+      "ficha_tecnica": [
+        "Tejido de punto en hilo con brillo.",
+        "Manga corta y espalda descubierta con caída drapeada.",
+        "Flecos en el ruedo.",
+        "Lavar a mano en agua fría con jabón neutro.",
+        "No retorcer. Secar en plano sobre una toalla."
+      ],
       "composicion_pendiente": true,
       "construccion_pendiente": true,
       "origen": null,
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -342,13 +331,12 @@
     {
       "codigo": "FRAG-VE-03",
       "slug": "vestido-rapport",
-      "nombre": "rapport",
+      "nombre": "vestido rapport",
       "seccion": "vestidos",
       "tipologia": "vestido",
       "materialidad": "lycra de seda",
       "tecnica": "sublimación",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -357,7 +345,6 @@
       "precio": 90000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -376,7 +363,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -389,13 +375,12 @@
     {
       "codigo": "FRAG-PA-01",
       "slug": "dinosaurio",
-      "nombre": "dinosaurio",
+      "nombre": "pantalón dinosaurio",
       "seccion": "pantalones y faldas",
       "tipologia": "pantalón",
       "materialidad": "denim",
       "tecnica": null,
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -404,7 +389,6 @@
       "precio": 80000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -420,7 +404,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -434,13 +417,12 @@
     {
       "codigo": "FRAG-FA-01",
       "slug": "plaza",
-      "nombre": "plaza",
+      "nombre": "falda plaza",
       "seccion": "pantalones y faldas",
       "tipologia": "falda",
       "materialidad": "denim",
       "tecnica": null,
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -449,7 +431,6 @@
       "precio": 95000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -465,7 +446,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -483,13 +463,12 @@
     {
       "codigo": "FRAG-RE-01",
       "slug": "quien-es-la-ley",
-      "nombre": "quién es la ley",
+      "nombre": "remera quién es la ley",
       "seccion": "remeras",
       "tipologia": "remera",
       "materialidad": "jersey de algodón",
       "tecnica": "DTF",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -498,7 +477,6 @@
       "precio": 30000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -516,7 +494,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -530,13 +507,12 @@
     {
       "codigo": "FRAG-RE-02",
       "slug": "cerdos",
-      "nombre": "cerdos",
+      "nombre": "remera cerdos",
       "seccion": "remeras",
       "tipologia": "remera",
       "materialidad": "jersey de algodón",
       "tecnica": "DTF",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -545,7 +521,6 @@
       "precio": 30000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -563,7 +538,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -576,13 +550,12 @@
     {
       "codigo": "FRAG-RE-03",
       "slug": "trapos",
-      "nombre": "trapos",
+      "nombre": "remera trapos",
       "seccion": "remeras",
       "tipologia": "remera",
       "materialidad": "jersey de algodón",
       "tecnica": "DTF",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -591,7 +564,6 @@
       "precio": 30000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "pedido",
         "l": "pedido"
       },
@@ -609,7 +581,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -624,13 +595,12 @@
     {
       "codigo": "FRAG-RE-06",
       "slug": "pais-de-las-maravillas",
-      "nombre": "país de las maravillas",
+      "nombre": "remera país de las maravillas",
       "seccion": "remeras",
       "tipologia": "remera",
       "materialidad": "microtul",
       "tecnica": "sublimación",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -639,7 +609,6 @@
       "precio": 55000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "pedido",
         "l": "pedido"
       },
@@ -657,7 +626,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -671,13 +639,12 @@
     {
       "codigo": "FRAG-RE-07",
       "slug": "charly",
-      "nombre": "charly",
+      "nombre": "remera charly",
       "seccion": "remeras",
       "tipologia": "remera",
       "materialidad": "lycra de seda",
       "tecnica": "sublimación",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -698,7 +665,6 @@
         ]
       },
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -716,7 +682,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -726,13 +691,12 @@
     {
       "codigo": "FRAG-RE-08",
       "slug": "batato",
-      "nombre": "batato",
+      "nombre": "remera batato",
       "seccion": "remeras",
       "tipologia": "remera",
       "materialidad": "lycra de seda",
       "tecnica": "sublimación",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -753,7 +717,6 @@
         ]
       },
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -771,7 +734,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -782,70 +744,14 @@
       ]
     },
     {
-      "codigo": "FRAG-RE-09",
-      "slug": "remera-bandera",
-      "nombre": "bandera",
-      "seccion": "remeras",
-      "tipologia": "remera",
-      "materialidad": "lycra de seda",
-      "tecnica": "sublimación",
-      "talles": [
-        "s",
-        "m",
-        "l"
-      ],
-      "estado": "disponible",
-      "plazo": "1 a 2 semanas",
-      "precio": 35000,
-      "variantes": {
-        "etiqueta": "manga",
-        "opciones": [
-          {
-            "valor": "corta",
-            "precio": 35000
-          },
-          {
-            "valor": "larga",
-            "precio": 45000
-          }
-        ]
-      },
-      "stock": {
-        "s": "pedido",
-        "m": "ya",
-        "l": "pedido"
-      },
-      "descripcion": "Remera de lycra de seda con estampa pictórica en celeste y rojo. La mancha se extiende por toda la superficie sin repetirse, así que el recorte cae distinto en cada talle.",
-      "ficha_tecnica": [
-        "Lycra de seda.",
-        "Estampado por sublimación digital.",
-        "Lavar del revés a mano en agua fría.",
-        "No usar secarropas.",
-        "Planchar del revés en temperatura baja."
-      ],
-      "composicion_pendiente": true,
-      "construccion_pendiente": true,
-      "origen": "Paleta de la colección. El celeste opaco como identidad nacional puesta en crisis y el rojo como herida histórica, juntos y sin resolver.",
-      "medidas": {
-        "columnas": [],
-        "valores": {
-          "s": {},
-          "m": {},
-          "l": {}
-        }
-      },
-      "imagenes": []
-    },
-    {
       "codigo": "FRAG-RE-10",
       "slug": "remera-rapport",
-      "nombre": "rapport",
+      "nombre": "remera rapport",
       "seccion": "remeras",
       "tipologia": "remera",
       "materialidad": "lycra de seda",
       "tecnica": "sublimación",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -866,7 +772,6 @@
         ]
       },
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -884,23 +789,25 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
       },
-      "imagenes": []
+      "imagenes": [
+        "2cf172d3ef",
+        "11b429e282",
+        "81476572ec"
+      ]
     },
     {
       "codigo": "FRAG-SH-01",
       "slug": "2001",
-      "nombre": "2001",
+      "nombre": "short 2001",
       "seccion": "shorts",
       "tipologia": "short",
       "materialidad": "lycra de seda",
       "tecnica": "sublimación",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -909,7 +816,6 @@
       "precio": 75000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -926,7 +832,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -939,13 +844,12 @@
     {
       "codigo": "FRAG-SH-02",
       "slug": "short-bandera",
-      "nombre": "bandera",
+      "nombre": "short bandera",
       "seccion": "shorts",
       "tipologia": "short",
       "materialidad": "lycra de seda",
       "tecnica": "sublimación",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -954,7 +858,6 @@
       "precio": 75000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -971,7 +874,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }
@@ -981,13 +883,12 @@
     {
       "codigo": "FRAG-SW-01",
       "slug": "a-mano",
-      "nombre": "a mano",
+      "nombre": "sweater a mano",
       "seccion": "sweaters",
       "tipologia": "sweater",
       "materialidad": "lana",
       "tecnica": "tejido artesanal",
       "talles": [
-        "s",
         "m",
         "l"
       ],
@@ -996,7 +897,6 @@
       "precio": 150000,
       "variantes": null,
       "stock": {
-        "s": "pedido",
         "m": "ya",
         "l": "pedido"
       },
@@ -1013,7 +913,6 @@
       "medidas": {
         "columnas": [],
         "valores": {
-          "s": {},
           "m": {},
           "l": {}
         }

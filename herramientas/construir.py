@@ -20,6 +20,7 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ANCHOS = [600, 1000, 1600]
 SITIO = "https://www.nuevostrapos.com.ar"  # sin barra final
 WA = "https://wa.me/5493534136713"
+ALIAS = "nuevostrapos.archivo"
 IG = "https://www.instagram.com/nuevostrapos.archivo/"
 
 # Editoriales disponibles para el cierre de cada ficha.
@@ -171,8 +172,6 @@ def ficha(p, encabezado, pie, cierre):
 
     selectores = opciones("talle", "talle", p["talles"],
                           estados=p.get("stock"))
-    selectores += ('<p class="compra__medidas"><a href="#medidas">'
-                   "tabla de medidas</a></p>")
     if p["variantes"]:
         v = p["variantes"]
         selectores += opciones(
@@ -196,11 +195,6 @@ def ficha(p, encabezado, pie, cierre):
     # Un desplegable que se abre y dice PENDIENTE es peor que no estar.
     if lineas:
         bloques += desplegable("cómo está hecha", lineas)
-    bloques += ('<details class="desplegable" id="medidas">'
-                '<summary class="desplegable__titulo">medidas'
-                '<span class="desplegable__signo" aria-hidden="true"></span>'
-                '</summary><div class="desplegable__cuerpo">%s</div></details>'
-                % tabla_medidas(p))
     if p["origen"]:
         bloques += desplegable("origen", "<p>%s</p>" % e(p["origen"]))
 
@@ -272,7 +266,7 @@ TEMPLATE = """<!DOCTYPE html>
             Pagás en Mercado Pago. No guardo ningún dato de tu tarjeta.<br>
             Envíos a todo el país. <a href="/contacto.html">Escribime</a> para
             saber el costo a tu zona.<br>
-            También podés pagar por transferencia.
+            También podés pagar por transferencia al alias <strong>nuevostrapos.archivo</strong>.
           </p>
           <div class="pagos" aria-label="medios de pago">
             <span>crédito</span><span>débito</span><span>Rapipago</span>
@@ -441,7 +435,7 @@ SOBRE = (
 
     '<p class="kicker">la colección</p>'
     '<div class="sobre__bloque t-destacado" style="margin-top:var(--e-3)">'
-    "<p>Veinte prendas construidas a partir de una investigación sobre la "
+    "<p>Diecinueve prendas construidas a partir de una investigación sobre la "
     "contracultura argentina de los años setenta y ochenta, traducida a "
     "materiales, siluetas y superficies.</p>"
     "</div>"
@@ -629,7 +623,7 @@ RETORNOS = {
         "cuerpo": "<p class=\"t-cuerpo\">No se hizo ningún cobro. Podés "
                   "intentarlo de nuevo con otro medio de pago.</p>"
                   "<p class=\"t-chico\" style=\"margin-top:16px\">También podés "
-                  "pagar por transferencia: escribime y te paso el alias.</p>",
+                  "pagar por transferencia al alias nuevostrapos.archivo.</p>",
         "acciones": '<a class="boton boton--invertido" href="/">Volver a intentar</a>'
                     '<a class="boton" href="/contacto.html">Escribime</a>',
         "vaciar": False,
@@ -661,21 +655,84 @@ def pagina_retorno(clave):
     )
 
 
+def punto(titulo, *parrafos):
+    return ('<div class="terminos__punto"><h2>%s</h2>%s</div>'
+            % (e(titulo), "".join('<p class="t-cuerpo">%s</p>' % t
+                                  for t in parrafos)))
+
+
 def pagina_terminos():
-    # Los títulos quedan como comentario HTML: le sirven a Delfi para saber qué
-    # escribir, y no le muestran al comprador una página llena de huecos.
-    puntos = "<!-- estructura a completar:" + " · ".join(TERMINOS_PUNTOS) + " -->"
+    """Lo que sabemos con certeza, dicho en claro.
+
+    No es asesoramiento legal ni pretende serlo: es la información de la
+    operación. La revisión profesional sigue pendiente, sobre todo el punto
+    de arrepentimiento, que choca con la política de no aceptar cambios.
+    """
     return (
         '<div class="contenedor terminos">'
-        '<h1 class="t-titulo" style="margin-bottom:var(--e-3)">'
-        "términos y condiciones</h1>"
-        '<p class="t-cuerpo lectura" style="margin-bottom:var(--e-4)">'
-        "Estoy redactando los términos y condiciones de compra. Mientras "
-        "tanto, cualquier duda sobre un pedido la resuelvo por WhatsApp.</p>"
-        + puntos +
-        '<p class="t-nota" style="margin-top:var(--e-4)">'
-        "Ante cualquier duda sobre una compra, "
-        '<a href="%s" target="_blank" rel="noopener">Escribime</a>.</p>'
+        '<p class="kicker">condiciones</p>'
+        '<h1 class="t-titulo" style="margin-top:var(--e-2)">'
+        "t\u00e9rminos y condiciones</h1>"
+
+        + punto(
+            "qui\u00e9n vende",
+            "nuevos trapos es una marca de dise\u00f1o de autor de C\u00f3rdoba, "
+            "Argentina, a cargo de Delfina Pagliero. Las prendas se dise\u00f1an "
+            "y se producen ac\u00e1.")
+
+        + punto(
+            "precios y moneda",
+            "Los precios est\u00e1n en pesos argentinos y son los que figuran "
+            "en cada ficha en el momento de la compra. El costo del env\u00edo "
+            "no est\u00e1 incluido en el precio de la prenda.")
+
+        + punto(
+            "medios de pago",
+            "El pago se hace dentro de Mercado Pago: tarjeta de cr\u00e9dito, "
+            "tarjeta de d\u00e9bito, Rapipago, Pago F\u00e1cil, dinero en cuenta "
+            "y cuotas sin tarjeta. Este sitio no recibe ni guarda ning\u00fan "
+            "dato de tu tarjeta.",
+            "Tambi\u00e9n pod\u00e9s pagar por transferencia bancaria al alias "
+            "<strong>%s</strong>. En ese caso el pedido se confirma cuando "
+            "recibo el comprobante." % ALIAS)
+
+        + punto(
+            "plazos de producci\u00f3n y entrega",
+            "Las prendas que est\u00e1n hechas salen en 1 a 5 d\u00edas. Las que "
+            "se producen a pedido llegan en 1 a 2 semanas. En los dos casos el "
+            "plazo se cuenta desde que se acredita el pago, no desde que se "
+            "hace el pedido: los pagos en efectivo pueden tardar uno o dos "
+            "d\u00edas h\u00e1biles en acreditarse.",
+            "Cada ficha dice en qu\u00e9 plazo sale ese talle.")
+
+        + punto(
+            "env\u00edos",
+            "Hago env\u00edos a todo el pa\u00eds. El costo depende de la zona y "
+            "lo coordinamos por WhatsApp antes de despachar.")
+
+        + punto(
+            "cambios, devoluciones y fallas",
+            "Como cada pieza se produce a pedido, no hago cambios por "
+            "arrepentimiento. S\u00ed resuelvo cualquier problema de confecci\u00f3n "
+            "o falla del producto: escribime y lo vemos.")
+
+        + punto(
+            "bot\u00f3n de arrepentimiento",
+            "Si compraste a distancia pod\u00e9s pedir la cancelaci\u00f3n dentro "
+            "de los 10 d\u00edas corridos de recibida la prenda, seg\u00fan la Ley "
+            "24.240 de Defensa del Consumidor. Para hacerlo, "
+            '<a href="%s">escribime por ac\u00e1</a> con tu n\u00famero de orden.' % WA)
+
+        + punto(
+            "datos personales",
+            "Este sitio no tiene cuentas de usuario ni formularios de datos "
+            "personales. Los datos de la compra los maneja Mercado Pago bajo "
+            "su propia pol\u00edtica de privacidad. Lo \u00fanico que se guarda en "
+            "tu navegador es el contenido del carrito, y queda en tu equipo.")
+
+        + '<p class="t-nota" style="margin-top:var(--e-5)">'
+        "\u00daltima actualizaci\u00f3n: septiembre de 2026. Ante cualquier duda "
+        'sobre una compra, <a href="%s">escribime</a>.</p>'
         "</div>" % WA
     )
 

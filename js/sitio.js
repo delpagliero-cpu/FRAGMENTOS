@@ -94,14 +94,26 @@ export function escapar(s) {
 
 /* tarjeta de prenda ------------------------------------------------------ */
 
+/* Las tipologías que se acercan necesitan pedir una imagen más grande: si no,
+   el navegador elige la chica y al ampliarla se ve borrosa. */
+const ACERCADAS = { remera: 1.75, sweater: 1.45, short: 1.6, "pantalón": 1.35, falda: 1.4 };
+
+function sizesSegunTipo(sizes, tipologia) {
+  const z = ACERCADAS[tipologia];
+  if (!z) return sizes;
+  return sizes.replace(/(\d+)vw/g, (m, n) => Math.round(+n * z) + "vw");
+}
+
 export function tarjeta(p, sizes) {
   const sello = hayStock(p)
     ? '<span class="prenda__ya">1 a 5 días</span>' : "";
   const pr = precioDesde(p);
   return (
     "<article>" +
-    '<a class="prenda__enlace" href="/producto/' + p.slug + '/">' +
-    '<div class="prenda__foto">' + foto(p, 0, sizes) + sello + "</div>" +
+    '<a class="prenda__enlace" data-tipo="' + escapar(p.tipologia || "") +
+    '" href="/producto/' + p.slug + '/">' +
+    '<div class="prenda__foto">' +
+    foto(p, 0, sizesSegunTipo(sizes, p.tipologia)) + sello + "</div>" +
     '<div class="prenda__datos">' +
     '<p class="prenda__nombre">' + escapar(p.nombre) + "</p>" +
     (pr ? '<p class="prenda__precio t-cifra">' + precio(pr) + "</p>"

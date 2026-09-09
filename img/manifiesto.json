@@ -30,6 +30,7 @@
     "0e4d2cc67c": 0.6667,
     "2cf172d3ef": 0.8,
     "11b429e282": 0.6667,
+    "81476572ec": 0.6667,
     "417489ca80": 0.8,
     "26154ad2b6": 0.6667,
     "fb6531e5ce": 0.6667,
@@ -120,7 +121,11 @@
     },
     "FRAG-RE-10": {
       "carpeta": "FRAG-RE-10 · rapport",
-      "imagenes": []
+      "imagenes": [
+        "2cf172d3ef",
+        "11b429e282",
+        "81476572ec"
+      ]
     },
     "FRAG-SA-01": {
       "carpeta": "FRAG-SA-01 · ricota · saco de denim",
