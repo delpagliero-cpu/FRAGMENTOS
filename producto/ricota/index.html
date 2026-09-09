@@ -97,14 +97,6 @@
 
 <footer class="contenedor pie">
   <div class="pie__grilla">
-    <form class="pila-2" data-newsletter novalidate>
-      <label class="etiqueta" for="mail">dejá tu mail y te aviso cuándo sale lo próximo</label>
-      <div class="newsletter">
-        <input class="campo" id="mail" name="mail" type="email" autocomplete="email" required>
-        <button class="boton" type="submit">Enviar</button>
-      </div>
-      <p class="t-nota" data-newsletter-estado role="status"></p>
-    </form>
     <nav class="pie__links" aria-label="pie">
       <a href="https://www.instagram.com/nuevostrapos.archivo/" target="_blank" rel="noopener">Instagram</a>
       <a href="/sobre.html">sobre la marca</a>
@@ -133,11 +125,7 @@ marcarPagina();
 ocultarAlBajar();
 conectarCarrito();
 document.addEventListener("carrito:cambio", pintarContador);
-document.querySelector("[data-newsletter]").addEventListener("submit", (ev) => {
-  ev.preventDefault();
-  ev.target.querySelector("[data-newsletter-estado]").textContent =
-    "todavía no está conectado.";
-});
+
 
 /* La entrega sigue al talle elegido: puede haber un M hecho y un L a pedido. */
 const ROTULOS = { ya: "entrega en 1 a 5 días", pedido: "hecho para vos · 1 a 2 semanas" };

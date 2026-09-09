@@ -636,8 +636,14 @@
 
 .pie__grilla { display: grid; grid-template-columns: 1fr; gap: var(--e-4); }
 
+/* Era de dos columnas por el formulario de newsletter, que ya no está.
+   Con una sola, los links del pie se acomodan en fila en escritorio. */
 @media (min-width: 800px) {
-  .pie__grilla { grid-template-columns: 1fr auto; gap: var(--e-6); }
+  .pie__links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--e-3);
+  }
 }
 
 .newsletter { display: flex; gap: var(--e-1); max-width: 420px; }

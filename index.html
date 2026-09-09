@@ -107,14 +107,6 @@
 
 <footer class="contenedor pie">
   <div class="pie__grilla">
-    <form class="pila-2" data-newsletter novalidate>
-      <label class="etiqueta" for="mail">dejá tu mail y te aviso cuándo sale lo próximo</label>
-      <div class="newsletter">
-        <input class="campo" id="mail" name="mail" type="email" autocomplete="email" required>
-        <button class="boton" type="submit">Enviar</button>
-      </div>
-      <p class="t-nota" data-newsletter-estado role="status"></p>
-    </form>
     <nav class="pie__links" aria-label="pie">
       <a href="https://www.instagram.com/nuevostrapos.archivo/" target="_blank" rel="noopener">Instagram</a>
       <a href="/sobre.html">sobre la marca</a>
@@ -149,11 +141,7 @@ ocultarAlBajar();
 
 conectarCarrito();
 document.addEventListener("carrito:cambio", pintarContador);
-document.querySelector("[data-newsletter]").addEventListener("submit", (e) => {
-  e.preventDefault();
-  e.target.querySelector("[data-newsletter-estado]").textContent =
-    "todavía no está conectado.";
-});
+
 
 const ancla = (s) => s.replace(/ /g, "-");
 const SIZES = "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw";

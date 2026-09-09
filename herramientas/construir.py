@@ -310,11 +310,7 @@ marcarPagina();
 ocultarAlBajar();
 conectarCarrito();
 document.addEventListener("carrito:cambio", pintarContador);
-document.querySelector("[data-newsletter]").addEventListener("submit", (ev) => {
-  ev.preventDefault();
-  ev.target.querySelector("[data-newsletter-estado]").textContent =
-    "todavía no está conectado.";
-});
+
 
 /* La entrega sigue al talle elegido: puede haber un M hecho y un L a pedido. */
 const ROTULOS = { ya: "entrega en 1 a 5 días", pedido: "hecho para vos · 1 a 2 semanas" };
@@ -400,11 +396,6 @@ pintarContador();
 medirEncabezado();
 conectarCarrito();
 document.addEventListener("carrito:cambio", pintarContador);
-document.querySelector("[data-newsletter]").addEventListener("submit", (ev) => {
-  ev.preventDefault();
-  ev.target.querySelector("[data-newsletter-estado]").textContent =
-    "todavía no está conectado.";
-});
 </script>
 
 </body>
