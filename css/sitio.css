@@ -151,7 +151,7 @@
 }
 
 @media (min-width: 800px) {
-  .datos { grid-template-columns: repeat(4, 1fr); }
+  .datos { grid-template-columns: repeat(3, 1fr); }
 }
 
 .datos__valor {

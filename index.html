@@ -41,7 +41,7 @@
   </div>
   <div class="aviso" aria-live="off">
     <span data-aviso>envíos a todo el país</span>
-    <span data-aviso hidden>pagos por Mercado Pago</span>
+    <span data-aviso hidden>hasta 3 cuotas sin interés</span>
   </div>
 </header>
 
@@ -51,14 +51,6 @@
   <a class="doc__wordmark" href="/" aria-label="nuevos trapos" style="width:min(100%,520px);margin-block:var(--e-4)">
     <svg style="width:100%" viewBox="0 0 438.99 56.49" fill="currentColor" aria-hidden="true"><use href="#wordmark"/></svg>
   </a>
-
-  <!-- tira de metadatos, el gesto de archivo -->
-  <div class="datos">
-    <div><p class="rotulo">marca</p><p class="datos__valor">diseño de autor</p></div>
-    <div><p class="rotulo">origen</p><p class="datos__valor">Córdoba, Argentina</p></div>
-    <div><p class="rotulo">producción</p><p class="datos__valor">a pedido · 1 a 2 semanas</p></div>
-    <div><p class="rotulo">colección</p><p class="datos__valor" data-cuenta-prendas>—</p></div>
-  </div>
 </div>
 
 <!-- filtro fijo: hace scroll suave hasta cada sección -->
@@ -152,8 +144,7 @@ try {
   const bruto = await datos();
   const d = { ...bruto, prendas: bruto.prendas.filter(publicable) };
 
-  document.querySelector("[data-cuenta-prendas]").textContent =
-    d.prendas.length + " prendas";
+  
 
   cajaFiltro.innerHTML = d.secciones
     .map((s) => '<a class="filtro__enlace" href="#' + ancla(s) + '">' +
